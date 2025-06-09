@@ -1,0 +1,28 @@
+BPM=140
+
+x=48
+n1=🍄🐸.🐸🍄.🐸.
+🍄=82
+🐸=89
+pr0=........2/3....3/5/7..
+# coucou
+# p1.c = ƒr(1:16)
+
+# s1::c:ƒr(1,16)
+# s1::n:n1
+# s1::v:ƒr(0,127)
+# s1::bpm:140
+# s1::steps:200
+# 
+# s2::c:ƒr(1,16)
+# s2::n:n1
+# s2::v:ƒr(0,127)
+# s2::bpm:138
+# s2::steps:200
+# 
+# o: s1 + s2 -> ƒroct(-1,2) -> ƒratchet(r1)
+
+
+# TODO Deux types d'effets : les globaux et les séquencés
+# Un pattern qui va finir en MIDI doit dire quels sont ses c, n, v, timings de note off/note on.
+# Opt : bpm, nb de steps
