@@ -2,6 +2,8 @@
 
 ## Inspirations
 
+- https://tidalcycles.org/
+- https://opusmodus.com/
 - https://oxiinstruments.com/oxi-one
 - https://squarp.net/hapax/
 - https://510k.myshopify.com/products/seqund-au-vst-vst3-sequencer
