@@ -1,11 +1,6 @@
-BPM=140
+p0 = 0
+p0 > 00000000.mid
 
-x=48
-n1=🍄🐸.🐸🍄.🐸.
-🍄=82
-🐸=89
-pr0=........2/3....3/5/7..
-# coucou
 # p1.c = ƒr(1:16)
 
 # s1::c:ƒr(1,16)
@@ -21,8 +16,3 @@ pr0=........2/3....3/5/7..
 # s2::steps:200
 # 
 # o: s1 + s2 -> ƒroct(-1,2) -> ƒratchet(r1)
-
-
-# TODO Deux types d'effets : les globaux et les séquencés
-# Un pattern qui va finir en MIDI doit dire quels sont ses c, n, v, timings de note off/note on.
-# Opt : bpm, nb de steps
