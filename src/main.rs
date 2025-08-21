@@ -5,29 +5,6 @@ use std::fs;
 use std::path::Path;
 
 ////////////////////////////////////////////////////////////////////////////////
-// STRUCTS
-////////////////////////////////////////////////////////////////////////////////
-
-struct TimeSignature {
-    upper: u8,
-    lower: u8,
-}
-
-struct Pattern {
-    name: String,
-    time_signature: TimeSignature,
-}
-
-impl Pattern {
-    fn new(name: &str) -> Self {
-        Self {
-            name: name.to_string(),
-            time_signature: DEFAULT_TIME_SIGNATURE,
-        }
-    }
-}
-
-////////////////////////////////////////////////////////////////////////////////
 // CONSTANTS
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -43,6 +20,31 @@ const DEFAULT_TIME_SIGNATURE: TimeSignature = TimeSignature { upper: 4, lower: 4
 const DEFAULT_GRID_RESOLUTION: u8 = 4;
 const DEFAULT_NOTE_LENGTH: u8 = 4;
 const DEFAULT_PATTERN_LENGTH: PatternLength = PatternLength::Content;
+
+////////////////////////////////////////////////////////////////////////////////
+// STRUCTS
+////////////////////////////////////////////////////////////////////////////////
+
+struct TimeSignature {
+    upper: u8,
+    lower: u8,
+}
+
+struct Pattern {
+    name: String,
+    time_signature: TimeSignature,
+    grid_resolution: u8,
+}
+
+impl Pattern {
+    fn new(name: &str) -> Self {
+        Self {
+            grid_resolution: DEFAULT_GRID_RESOLUTION,
+            name: name.to_string(),
+            time_signature: DEFAULT_TIME_SIGNATURE,
+        }
+    }
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // HELPERS
@@ -73,7 +75,7 @@ fn main() {
 }
 
 fn process_mn_file(content: String) {
-    let mut patterns: HashMap<String, String> = HashMap::new();
+    let patterns: HashMap<String, String> = HashMap::new();
 
     for line in content.lines() {
         let line = line.trim();
