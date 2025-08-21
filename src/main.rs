@@ -1,4 +1,5 @@
-// use regex::Regex;
+use once_cell::sync::Lazy;
+use regex::Regex;
 use std::collections::HashMap;
 use std::env;
 use std::fs;
@@ -13,35 +14,46 @@ enum PatternLength {
     Measure,
 }
 
-const GLOBAL_BPM: u16 = 120;
-const GLOBAL_PPQ: u16 = 480;
+// DEFAULTS
+
+const DEFAULT_BPM: u16 = 120;
+const DEFAULT_PPQ: u16 = 480;
 const DEFAULT_MIDI_NOTE: u8 = 50;
 const DEFAULT_TIME_SIGNATURE: TimeSignature = TimeSignature { upper: 4, lower: 4 };
 const DEFAULT_GRID_RESOLUTION: u8 = 4;
 const DEFAULT_NOTE_LENGTH: u8 = 4;
 const DEFAULT_PATTERN_LENGTH: PatternLength = PatternLength::Content;
 
+// PATTERNS
+
+static PATTERN_PATTERN: Lazy<Regex> =
+    Lazy::new(|| Regex::new(r"^[pP]([a-zA-Z0-9]+)\s*=(.*)").unwrap());
+
 ////////////////////////////////////////////////////////////////////////////////
 // STRUCTS
 ////////////////////////////////////////////////////////////////////////////////
 
+#[derive(Debug)]
 struct TimeSignature {
     upper: u8,
     lower: u8,
 }
 
+#[derive(Debug)]
 struct Pattern {
+    grid_resolution: u8,
     name: String,
     time_signature: TimeSignature,
-    grid_resolution: u8,
+    value: String,
 }
 
 impl Pattern {
-    fn new(name: &str) -> Self {
+    fn new(name: &str, value: &str) -> Self {
         Self {
             grid_resolution: DEFAULT_GRID_RESOLUTION,
             name: name.to_string(),
             time_signature: DEFAULT_TIME_SIGNATURE,
+            value: value.to_string(),
         }
     }
 }
@@ -84,8 +96,13 @@ fn process_mn_file(content: String) {
         } else if line.is_empty() {
             continue;
         } else {
-            println!("{}", line);
-            let a_pattern: Pattern = Pattern::new("coucou");
+            println!("🧊 {}", line);
+            if let Some(caps) = PATTERN_PATTERN.captures(line) {
+                let pattern_name = &caps[1];
+                let pattern_value = &caps[2].trim();
+                let a_pattern: Pattern = Pattern::new(pattern_name, pattern_value);
+                println!("🦀 {:?}", a_pattern);
+            }
         }
     }
 
