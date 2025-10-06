@@ -1,7 +1,8 @@
 import sys
-from Track import Track
 
-if __name__ == '__main__':
+from minuit import Track
+
+if __name__ == "__main__":
     f = open(sys.argv[1], "r")
-    track = Track(f.readlines())
+    track = Track.Track("".join(sys.argv[1].split(".")[:-1]), f.readlines())
     f.close()
