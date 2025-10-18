@@ -1,0 +1,10 @@
+{
+  "python.formatting.provider": "none",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8"
+  },
+  "autopep8.args": [
+    "--ignore",
+    "E501"
+  ]
+}

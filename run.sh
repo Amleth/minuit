@@ -1,2 +1,2 @@
 clear
-python3 -m main ./D0C/00.mn
+python3 -m main ./D0C/01.mn
