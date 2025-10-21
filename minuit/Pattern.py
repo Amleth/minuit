@@ -17,9 +17,9 @@ class Pattern:
     def __init__(self):
         self.channel = 0
         self.notes_numbers_lane: list[int] = []
-        self.rhythm_values_lane: list[float] = []
+        self.rhythm_values_lane: list[int] = []
         self.velocity_values_lane: list[int] = []
-        self.lengths_lane: list[float] = []
+        self.lengths_lane: list[int] = []
 
     def get_longest_lane_len(self):
         return len(max([self.notes_numbers_lane, self.rhythm_values_lane, self.velocity_values_lane, self.lengths_lane], key=len))
