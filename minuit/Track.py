@@ -116,6 +116,9 @@ class Track:
                         #     self.patterns[pattern_var_name].rhythm_values_lane.append(x)
                         matched = True
 
+                    case _:
+                        pass
+
         # Sequencing
         if not matched:
             match = re.search(r"§\s*(.*)", line)
