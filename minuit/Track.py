@@ -99,21 +99,8 @@ class Track:
                         matched = True
 
                     case Pattern.PatternLaneTypes.RHYTHM_VALUES.value:
-                        # values = re.findall(INT_OR_FUNCTIONS, pattern_lane_values)
-                        # res = []
-                        # for x in values:
-                        #     if x.isdigit():
-                        #         y = str(x)
-                        #         res.append(lambda: y)
-                        #     else:
-                        #         function = None
-                        #         if re.match(r'^\(.*\)$', x):
-                        #             function = get_function(x)
-                        #             res.append(function)
-                        #         if not function:
-                        #             raise BaseException("Invalid value:", x)
-                        # for x in res:
-                        #     self.patterns[pattern_var_name].rhythm_values_lane.append(x)
+                        for x in pattern_lane_values.split():
+                            self.patterns[pattern_var_name].rhythm_values_lane.append(int(x))
                         matched = True
 
                     case _:
