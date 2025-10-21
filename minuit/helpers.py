@@ -46,4 +46,6 @@ def fill_cycle(l: list[Any], size: int) -> list[Any]:
 
 
 def rv2ppq(x: int) -> int:
+    if x == 0:
+        return 1
     return round((4 * 1 / x) * constants.PPQ)
