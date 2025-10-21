@@ -2,7 +2,7 @@ import random
 import re
 
 
-def replace(f_expr_match: re.Match[str]) -> str:
+def replace(f_expr_match: re.Match[str]):
     f_expr = f_expr_match.group(0)
     parts = f_expr.strip('()').split()
     f_name: str = parts[0]
@@ -10,15 +10,15 @@ def replace(f_expr_match: re.Match[str]) -> str:
     match f_name:
 
         case 'p':
-            return pick(f_params)
+            return lambda: pick(f_params)
 
         case 'ro':
-            return random_octave(int(f_params[0]), int(f_params[1]), int(f_params[2]))
+            return lambda: random_octave(int(f_params[0]), int(f_params[1]), int(f_params[2]))
 
         case _:
             pass
 
-    return ''
+    return lambda: None
 
 
 def pick(l: list[str]) -> str:

@@ -4,6 +4,10 @@ from itertools import cycle
 from . import constants
 
 
+def sep():
+    print("🌲" * 42)
+
+
 def pitch_class_symbol_to_midi_note(x: str) -> int:
     r = rf"([{''.join(constants.DEFAULT_PITCH_CLASS_SYMBOLS_TO_MIDI_NOTES.keys())}])([+-]*)"
     match = re.search(r, x)
