@@ -11,7 +11,7 @@ from . import symbols_functions
 class Track:
     def __init__(self, name: str, lines: list[str]):
 
-        print("🌲" * 42)
+        self.symbols: dict[str, str] = {}
 
         # Set up
         self.name = Path(name).name
@@ -32,8 +32,6 @@ class Track:
             pattern.complete()
             pattern.check_lengths()
 
-        # Assign symbols values
-
         # Print
         print("🌲" * 42)
         print("PATTERNS:")
@@ -47,14 +45,24 @@ class Track:
         print(f"   {self.seq}")
         print("🌲" * 42)
 
-        # 6. MINUIT TO MIDI!
+        # Minuit to MIDI!
         self.midi_file: MidiFile = MidiFile()
         self.write_midi()
 
     def parse_line(self, line: str):
+        line = line.strip()
+        line_history: list[str] = [line]
+        if not line or line[0] == '#':
+            return
+
         matched = False
-        pattern_lane_values_orig = ''
-        pattern_lane_values = ''
+
+        # Symbols declaration
+        if not matched:
+            match = re.search(r"\$(.)=(.*)", line)
+            if match:
+                self.symbols[match.group(1).strip()] = match.group(2).strip()
+                matched = True
 
         # Pattern declaration
         if not matched:
@@ -69,37 +77,40 @@ class Track:
                 # It's lanes
                 pattern_lane_type = match.group(2).strip().lower()
                 pattern_parameters = match.group(3).strip().lower()
-                pattern_lane_values_orig = match.group(4).strip().lower()
-                # pattern_lane_values = call_functions(pattern_lane_values)
+                line_history.append(match.group(4).strip().lower())
+
+                # Symbols substitutions
+                for symbol, symbol_value in self.symbols.items():
+                    line_history.append(line_history[-1].replace(symbol, symbol_value))
 
                 # Call symbol-functions
-                pattern_lane_values = re.sub(r'\([^)]*\)', symbols_functions.replace, pattern_lane_values_orig)
+                line_history.append(re.sub(r'\([^)]*\)', symbols_functions.replace, line_history[-1]))
 
                 # Lane processing
                 match pattern_lane_type:
 
                     case Pattern.PatternLaneTypes.NOTE_NUMBERS_AS_PITCH_CLASSES.value:
                         notes_symbols: list[str] = []
-                        for i in range(0, len(pattern_lane_values)):
-                            if pattern_lane_values[i] in ["+", "-"]:
+                        for i in range(0, len(line_history[-1])):
+                            if line_history[-1][i] in ["+", "-"]:
                                 if len(notes_symbols) > 1:
-                                    notes_symbols[-1] += pattern_lane_values[i]
+                                    notes_symbols[-1] += line_history[-1][i]
                                 else:
                                     raise BaseException("A pitch class pattern must not be with an octave switch symbol ('+' or '-")
                             else:
-                                if (pattern_lane_values[i] not in constants.DEFAULT_PITCH_CLASS_SYMBOLS_TO_MIDI_NOTES.keys()):
-                                    raise BaseException("Unknown pitch class symbol:", pattern_lane_values[i])
-                                notes_symbols.append(pattern_lane_values[i])
+                                if (line_history[-1][i] not in constants.DEFAULT_PITCH_CLASS_SYMBOLS_TO_MIDI_NOTES.keys()):
+                                    raise BaseException("Unknown pitch class symbol:", line_history[-1][i])
+                                notes_symbols.append(line_history[-1][i])
                         for x in notes_symbols:
                             self.patterns[pattern_var_name].notes_numbers_lane.append(helpers.pitch_class_symbol_to_midi_note(x))
                         matched = True
 
                     case Pattern.PatternLaneTypes.LENGTHS.value:
-                        self.patterns[pattern_var_name].lengths_lane = [int(pv) for pv in pattern_lane_values.split(" ")]
+                        self.patterns[pattern_var_name].lengths_lane = [int(pv) for pv in line_history[-1].split(" ")]
                         matched = True
 
                     case Pattern.PatternLaneTypes.RHYTHM_VALUES.value:
-                        for x in pattern_lane_values.split():
+                        for x in line_history[-1].split():
                             self.patterns[pattern_var_name].rhythm_values_lane.append(int(x))
                         matched = True
 
@@ -116,8 +127,12 @@ class Track:
                 # TODO tout n'est pas si facile
                 self.seq[0] = [sequenced_pattern]
 
+        line_history = helpers.uniq(line_history)
+
         if matched:
-            print("🟢", line, "🌀 " + pattern_lane_values if pattern_lane_values and pattern_lane_values != pattern_lane_values_orig else '')
+            print("🟢", line)
+            for x in line_history[2:]:
+                print("🌀", x)
         if not matched:
             print("🔴", line)
 

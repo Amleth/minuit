@@ -49,3 +49,11 @@ def rv2ppq(x: int) -> int:
     if x == 0:
         return 1
     return round((4 * 1 / x) * constants.PPQ)
+
+
+def uniq(l: list[str]) -> list[str]:
+    res: list[str] = []
+    for x in l:
+        if x not in res:
+            res.append(x)
+    return res
