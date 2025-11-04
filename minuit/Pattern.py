@@ -16,7 +16,7 @@ class PatternLaneTypes(Enum):
 class Pattern:
     def __init__(self):
         self.channel = 0
-        self.notes_numbers_lane: list[int] = []
+        self.notes_numbers_lane: list[str] = []
         self.rhythm_values_lane: list[int] = []
         self.velocity_values_lane: list[int] = []
         self.lengths_lane: list[int] = []
@@ -26,7 +26,7 @@ class Pattern:
 
     def complete(self):
         if len(self.notes_numbers_lane) == 0:
-            self.notes_numbers_lane.append(constants.DEFAULT_MIDI_NOTE)
+            self.notes_numbers_lane.append('0')
         if len(self.rhythm_values_lane) == 0:
             self.rhythm_values_lane.append(constants.DEFAULT_RHYTHM_VALUE)
         if len(self.velocity_values_lane) == 0:
@@ -41,7 +41,3 @@ class Pattern:
             self.lengths_lane = self.rhythm_values_lane
         else:
             self.lengths_lane = helpers.fill_cycle(self.lengths_lane, self.get_longest_lane_len())
-
-    def check_lengths(self):
-        if len(self.notes_numbers_lane) != len(self.rhythm_values_lane):
-            raise BaseException("Inconsistency between notes and rhythm values lists lengths.")

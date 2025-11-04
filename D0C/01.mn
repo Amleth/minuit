@@ -1,10 +1,9 @@
 # Symbols
-$🐙=(ro -3 3 100)
+$🐙=(@ro -3 3 100)
 
 # Patterns
-P0.p = 0(p 1 2 3)7🐙
-P0.r = (p 4 8 16)
-P0.l = 8
+P0.p=0(10p 1 2)(2:linspace 0 10)a(p 1 2 3)4b🐙4(5:linspace 0 10)
+P0.r=(17p 8 12 16)
 
 # FX
 P0>(f1 1 2)>(f2 -1 -2)>P0
