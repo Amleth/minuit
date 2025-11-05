@@ -1,1 +1,2 @@
+- Comment je distingue les fonctions déterministes des non déterministes ? Parce qu'au moment de les appeler, 
 - n-olets

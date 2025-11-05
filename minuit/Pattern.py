@@ -1,6 +1,7 @@
 from enum import Enum
 from . import constants
 from . import helpers
+from . import functions_symbols
 
 
 class PatternLaneTypes(Enum):
@@ -24,7 +25,7 @@ class Pattern:
     def get_longest_lane_len(self):
         return len(max([self.notes_numbers_lane, self.rhythm_values_lane, self.velocity_values_lane, self.lengths_lane], key=len))
 
-    def complete(self):
+    def fill(self):
         if len(self.notes_numbers_lane) == 0:
             self.notes_numbers_lane.append('0')
         if len(self.rhythm_values_lane) == 0:
@@ -41,3 +42,15 @@ class Pattern:
             self.lengths_lane = self.rhythm_values_lane
         else:
             self.lengths_lane = helpers.fill_cycle(self.lengths_lane, self.get_longest_lane_len())
+
+    def call_functions(self):
+        ll = []
+        for x in self.notes_numbers_lane:
+            f = helpers.Function(x)
+            if f.name:
+                ll.append(functions_symbols.call(f)())
+            else:
+                ll.append(x)
+        self.notes_numbers_lane = []
+
+        print(ll)

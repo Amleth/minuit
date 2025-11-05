@@ -1,24 +1,21 @@
+from dataclasses import dataclass
 import random
-import re
+from . import helpers
 
 
-def replace(f_expr_match: re.Match[str]):
-    f_expr = f_expr_match.group(0)
-    parts = f_expr.strip('()').split()
-    f_name: str = parts[0]
-    f_params = parts[1:]
-    match f_name:
+@dataclass
+class InvalidFunctionCall:
+    pass
 
+
+def call(f: helpers.Function):
+    match f.name:
         case 'p':
-            return lambda: pick(f_params)
-
+            return lambda: pick(f.parameters)
         case 'ro':
-            return lambda: random_octave(int(f_params[0]), int(f_params[1]), int(f_params[2]))
-
+            return lambda: random_octave(int(f.parameters[0]), int(f.parameters[1]), int(f.parameters[2]))
         case _:
-            pass
-
-    return lambda: None
+            return lambda: InvalidFunctionCall()
 
 
 def pick(l: list[str]) -> str:

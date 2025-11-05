@@ -47,14 +47,16 @@ class Track:
             print_line(l, False)
 
         #
-        # First, we complete
+        # First, we fill
         #
         for pattern_name, pattern in self.patterns.items():
-            pattern.complete()
+            pattern.fill()
 
         #
         # Then, we call functions
         #
+        for pattern_name, pattern in self.patterns.items():
+            pattern.call_functions()
 
         #
         # Print
@@ -66,7 +68,7 @@ class Track:
         helpers.sep()
         print("PATTERNS:")
         for pattern_name, pattern in self.patterns.items():
-            print(f"   {pattern_name} ({len(pattern.notes_numbers_lane)} events):")
+            print(f"   {pattern_name} ({pattern.get_longest_lane_len()} events):")
             print(f"      N: {pattern.notes_numbers_lane}")
             print(f"      R: {pattern.rhythm_values_lane}")
             print(f"      V: {pattern.velocity_values_lane}")
@@ -123,15 +125,11 @@ class Track:
                         ll = helpers.split_pattern_notes_lane(pattern_lane_value_after_symbol_substitution)
                         self.patterns[pattern_var_name].notes_numbers_lane = ll
                     case Pattern.PatternLaneTypes.LENGTHS.value:
-                        pass
-                        # TODO
-                        # ll = re.findall(rf"{n_symbols_generating_function}|{one_symbol_generating_function}|\d+", pattern_lane_value_after_symbol_substitution)
-                        # self.patterns[pattern_var_name].lengths_lane = ll
+                        ll = helpers.split_pattern_length_values_lane(pattern_lane_value_after_symbol_substitution)
+                        self.patterns[pattern_var_name].lengths_lane = ll
                     case Pattern.PatternLaneTypes.RHYTHM_VALUES.value:
-                        pass
-                        # TOD
-                        # ll = re.findall(rf"{n_symbols_generating_function}|{one_symbol_generating_function}|\d+", pattern_lane_value_after_symbol_substitution)
-                        # self.patterns[pattern_var_name].rhythm_values_lane = ll
+                        ll = helpers.split_pattern_rhythm_values_lane(pattern_lane_value_after_symbol_substitution)
+                        self.patterns[pattern_var_name].rhythm_values_lane = ll
                     case _:
                         pass
 

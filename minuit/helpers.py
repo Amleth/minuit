@@ -1,8 +1,7 @@
+from dataclasses import dataclass
 from typing import Any
-import re
 from itertools import cycle
 from . import constants
-from . import Track
 
 
 def sep():
@@ -86,12 +85,11 @@ def split_pattern_notes_lane(x: str) -> list[str]:
             current_fonction += c
         elif c == ')':
             current_fonction += c
-            if ':' in current_fonction.split()[0]:
-                n = int(current_fonction.split()[0].split(':')[0].replace('(', ''))
+            f = Function(current_fonction)
+            if f.n > 1:
                 ll.append(current_fonction)
-                for i in range(n - 1):
+                for i in range(f.n - 1):
                     ll.append(None)
-                print(current_fonction, n)
             elif current_fonction[1] == '@':
                 ll[-1] = ll[-1] + current_fonction
             else:
@@ -103,3 +101,43 @@ def split_pattern_notes_lane(x: str) -> list[str]:
             ll.append(c)
 
     return ll
+
+
+def split_pattern_length_values_lane(l: str) -> list[int]:
+    return [int(x) for x in l.split()]
+
+
+def split_pattern_rhythm_values_lane(l: str) -> list[int]:
+    return [int(x) for x in l.split()]
+
+
+@dataclass
+class Function:
+    item: str
+    n: int
+    name: str
+    parameters: list[Any]
+
+    def __init__(self, x: str):
+        self.item = ''
+        self.n = 0
+        self.name = ''
+        self.parameters = []
+
+        if not x or len(x) <= 3 or (x[0] != '(' and x[1] != '(') or x[-1] != ')':
+            return
+        x = x.replace('(', '').replace(')', '')
+        parts = x.split()
+        if ':' in parts[0]:
+            y = parts[0].split(':')
+            self.n = int(y[0])
+            self.name = y[1]
+        elif '@' in parts[0]:
+            y = parts[0].split('@')
+            self.item = y[0]
+            self.n = 0
+            self.name = y[1]
+        else:
+            self.n = 1
+            self.name = parts[0]
+        self.parameters = parts[1:]
