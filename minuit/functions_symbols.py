@@ -1,21 +1,22 @@
-from dataclasses import dataclass
 import random
+import numpy as np
 from . import helpers
-
-
-@dataclass
-class InvalidFunctionCall:
-    pass
 
 
 def call(f: helpers.Function):
     match f.name:
+        case 'linspace':
+            return lambda: linspace(int(f.parameters[0]), int(f.parameters[1]), f.n_symbols_generated)
         case 'p':
             return lambda: pick(f.parameters)
         case 'ro':
             return lambda: random_octave(int(f.parameters[0]), int(f.parameters[1]), int(f.parameters[2]))
         case _:
-            return lambda: InvalidFunctionCall()
+            raise Exception('Unknown function:', f.name)
+
+
+def linspace(start: int, stop: int, num: int) -> list[int]:
+    return [str(int(x)) for x in np.linspace(start, stop, num).tolist()]
 
 
 def pick(l: list[str]) -> str:

@@ -45,12 +45,26 @@ class Pattern:
 
     def call_functions(self):
         ll = []
-        for x in self.notes_numbers_lane:
-            f = helpers.Function(x)
+        for i in range(len(self.notes_numbers_lane)):
+            c = self.notes_numbers_lane[i]
+            if not c:
+                continue
+            f = helpers.Function(c)
             if f.name:
-                ll.append(functions_symbols.call(f)())
+                if f.n_symbols_generated == 0:
+                    res = functions_symbols.call(f)()
+                    ll.append(f.item + res)
+                elif f.n_calls > 1:
+                    symbols_generated = []
+                    for i in range(f.n_calls):
+                        symbols_generated.append(functions_symbols.call(f)())
+                    ll = ll + symbols_generated
+                elif f.n_calls == 1:
+                    symbols_generated = functions_symbols.call(f)()
+                    if type(symbols_generated) == list:
+                        ll = ll + symbols_generated
+                    else:
+                        ll.append(symbols_generated)
             else:
-                ll.append(x)
-        self.notes_numbers_lane = []
-
-        print(ll)
+                ll.append(c)
+        self.notes_numbers_lane = ll[0:self.get_longest_lane_len()]

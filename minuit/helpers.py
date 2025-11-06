@@ -86,9 +86,10 @@ def split_pattern_notes_lane(x: str) -> list[str]:
         elif c == ')':
             current_fonction += c
             f = Function(current_fonction)
-            if f.n > 1:
+            n_symbols_that_will_be_generated = f.n_calls * f.n_symbols_generated
+            if n_symbols_that_will_be_generated > 1:
                 ll.append(current_fonction)
-                for i in range(f.n - 1):
+                for i in range(n_symbols_that_will_be_generated - 1):
                     ll.append(None)
             elif current_fonction[1] == '@':
                 ll[-1] = ll[-1] + current_fonction
@@ -114,13 +115,15 @@ def split_pattern_rhythm_values_lane(l: str) -> list[int]:
 @dataclass
 class Function:
     item: str
-    n: int
+    n_calls: int
+    n_symbols_generated: int
     name: str
     parameters: list[Any]
 
     def __init__(self, x: str):
         self.item = ''
-        self.n = 0
+        self.n_calls = 0
+        self.n_symbols_generated = 0
         self.name = ''
         self.parameters = []
 
@@ -128,16 +131,24 @@ class Function:
             return
         x = x.replace('(', '').replace(')', '')
         parts = x.split()
-        if ':' in parts[0]:
+        if '*' in parts[0]:
+            y = parts[0].split('*')
+            self.n_calls = int(y[0])
+            self.n_symbols_generated = 1
+            self.name = y[1]
+        elif ':' in parts[0]:
             y = parts[0].split(':')
-            self.n = int(y[0])
+            self.n_calls = 1
+            self.n_symbols_generated = int(y[0])
             self.name = y[1]
         elif '@' in parts[0]:
             y = parts[0].split('@')
             self.item = y[0]
-            self.n = 0
+            self.n_calls = 1
+            self.n_symbols_generated = 0
             self.name = y[1]
         else:
-            self.n = 1
+            self.n_calls = 1
+            self.n_symbols_generated = 1
             self.name = parts[0]
         self.parameters = parts[1:]
