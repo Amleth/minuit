@@ -13,3 +13,4 @@
 - https://100r.co/site/orca.html
 - https://doc.sccode.org/Tutorials/A-Practical-Guide/PG_01_Introduction.html
 - https://marionietoworld.com/
+- https://squarp.net/hapax/manual/modefx/

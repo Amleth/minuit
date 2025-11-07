@@ -77,6 +77,7 @@ def add_blank_items(ll: list[Any], n: int) -> list[Any]:
 
 
 def split_pattern_notes_lane(x: str) -> list[str]:
+    print(x)
     ll = []
     current_fonction = ''
 

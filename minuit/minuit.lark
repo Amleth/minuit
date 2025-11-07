@@ -1,0 +1,24 @@
+?start: statement*
+
+statement: pattern_lane_def
+
+pattern_lane_def: PATTERN_NAME ".p" "=" PITCH_LANE_VALUE
+    | PATTERN_NAME ".r" "=" RHYTHM_LANE_VALUE
+
+PATTERN_NAME: /P[0-9]+/
+
+PITCH_LANE_VALUE: /([0-9a-bA-B][+-]*)+/
+
+RHYTHM_LANE_VALUE: /[0-9][0-9 ]*/
+
+%import common.NEWLINE
+
+COMMENT: /#[^\n]*/
+
+%ignore COMMENT
+
+%ignore /[ \t]*\n/ss
+
+%ignore /[ \t]+/
+
+%ignore /[ \t]+/
