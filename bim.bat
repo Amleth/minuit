@@ -1,0 +1,1 @@
+.\minuit\.venv\Scripts\python.exe play.py

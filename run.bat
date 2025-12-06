@@ -1,0 +1,1 @@
+uv run .\main.py .\D0C\01.mn

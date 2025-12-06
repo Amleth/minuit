@@ -1,0 +1,36 @@
+?start: line*
+
+line: pattern_lane_def
+
+pattern_lane_def: pattern_name ".p" "=" pitch_lane
+    | pattern_name ".r" "=" rhythm_lane
+
+pattern_name: /P[0-9]+/
+
+pitch_lane: pitch_lane_token+
+
+pitch_lane_token: /[aAbBcCdDeEfFgGaAbB0123456789xXyY]/
+    | funcall
+
+rhythm_lane: (INT | NOLET)+
+
+INT: /-?\d+/
+
+NOLET: /\d+\/\d+/
+
+funcall: "(" funcname funcargs? ")"
+
+funcname: /[a-zA-Z]+/
+
+funcargs: funcarg*
+
+funcarg: funcarg_number
+    | funcall
+
+funcarg_number: /[-+]?(?:\d*\.\d+|\d+)/
+
+%ignore /#[^\n]*/
+
+%ignore /[ \t]+/
+
+%ignore /[ \t]*\n/

@@ -1,0 +1,3 @@
+- dissocier les raccourcis d'écriture algorithmiques et les effets
+- lark-parser
+- macro n-olets
