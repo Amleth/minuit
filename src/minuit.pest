@@ -1,0 +1,25 @@
+// BASE
+WS               = _{ " " | "\t" }
+integer          = { ASCII_DIGIT+ }
+fraction         = { integer ~ "/" ~ integer }
+float            = { integer ~ "." ~ integer }
+
+// GLOBAL STRUCTURE
+file             = _{ SOI ~ line* ~ (!EOI ~ ANY)* }
+line             = _{ (comment | pattern_lane_def) ~ NEWLINE? }
+comment          = _{ "#" ~ (!NEWLINE ~ ANY)* }
+
+// PATTERNS
+pattern_lane_def =  {
+    pattern_name ~ ".p" ~ WS* ~ "=" ~ WS* ~ pitch_lane
+  | pattern_name ~ ".r" ~ WS* ~ "=" ~ WS* ~ rhythm_lane
+}
+pattern_name     = @{ "P" ~ ASCII_DIGIT+ }
+
+// PITCH LANE
+pitch_lane       = { pitch* }
+pitch            = { ('0'..'9'|'a'..'g'|'A'..'G'|"x"|"X"|"y"|"Y")  ~ ("+" | "-"){0,3} }
+
+// RHYTHM LANE
+rhythm_lane      = { (WS+ | rhythm_value)+ }
+rhythm_value     = @{ fraction | float | integer }

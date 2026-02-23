@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="CargoProjects">
+    <cargoProject FILE="$PROJECT_DIR$/Cargo.toml">
+      <package file="$PROJECT_DIR$">
+        <feature name="default" enabled="true" />
+      </package>
+    </cargoProject>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3964be89-78ab-46e4-b900-844924f1f442" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/constants.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/score.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/symbols.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scores/explore.mn" beforeDir="false" afterPath="$PROJECT_DIR$/scores/explore.mn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pattern.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/pattern.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minuit.pest" beforeDir="false" afterPath="$PROJECT_DIR$/src/minuit.pest" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="RsBuildProfile:dev" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Rust File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="TCvcnYGp" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="36Z5zStcgS1WDRdcEMszzy0XUCX" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Cargo.Expand minuit::constants.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Install cargo-expand.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Run minuit.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.rust.reset.selective.auto.import&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/amleth/Library/CloudStorage/Dropbox/minuit-rust&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;org.rust.cargo.project.model.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
+    &quot;org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon&quot;: &quot;&quot;,
+    &quot;org.rust.first.attach.projects&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;language.rust.build.tool.cargo&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Cargo.Run minuit">
+    <configuration name="Expand minuit::constants" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="expand --bin minuit --color=always --theme=Dracula --tests constants" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Run minuit" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="buildProfileId" value="dev" />
+      <option name="command" value="run --package minuit --bin minuit -- ./scores/explore.mn" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Cargo.Run minuit" />
+        <item itemvalue="Cargo.Expand minuit::constants" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="RustProjectSettings">
+    <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3964be89-78ab-46e4-b900-844924f1f442" name="Changes" comment="" />
+      <created>1765201515512</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1765201515512</updated>
+      <workItem from="1765201517136" duration="968000" />
+      <workItem from="1765202586344" duration="164000" />
+      <workItem from="1765202840616" duration="526000" />
+      <workItem from="1765203444314" duration="846000" />
+      <workItem from="1765205512015" duration="755000" />
+      <workItem from="1765263512213" duration="12000" />
+      <workItem from="1765264054690" duration="24000" />
+      <workItem from="1765275099834" duration="291000" />
+      <workItem from="1765307755615" duration="121000" />
+      <workItem from="1765541266901" duration="96000" />
+      <workItem from="1765546361321" duration="57000" />
+      <workItem from="1765966445941" duration="23000" />
+      <workItem from="1766172571090" duration="681000" />
+      <workItem from="1766519972250" duration="768000" />
+      <workItem from="1766526814939" duration="1431000" />
+      <workItem from="1766863662314" duration="516000" />
+      <workItem from="1766864194465" duration="177000" />
+      <workItem from="1766864612161" duration="3086000" />
+      <workItem from="1766910700528" duration="926000" />
+      <workItem from="1767088501898" duration="307000" />
+      <workItem from="1767093300052" duration="49000" />
+      <workItem from="1767599940015" duration="6000" />
+      <workItem from="1767633190798" duration="7397000" />
+      <workItem from="1767694418340" duration="10000" />
+      <workItem from="1767694467729" duration="2291000" />
+      <workItem from="1767906524631" duration="724000" />
+      <workItem from="1768091041991" duration="3328000" />
+      <workItem from="1768094951921" duration="80000" />
+      <workItem from="1768095064594" duration="4436000" />
+      <workItem from="1768217326879" duration="1250000" />
+      <workItem from="1768229686016" duration="10000" />
+      <workItem from="1768287857713" duration="178000" />
+      <workItem from="1768288052401" duration="14000" />
+      <workItem from="1768288135067" duration="28000" />
+      <workItem from="1768333517331" duration="15000" />
+      <workItem from="1768374098988" duration="282000" />
+      <workItem from="1768374391752" duration="398000" />
+      <workItem from="1768604573805" duration="1780000" />
+      <workItem from="1768635833427" duration="1070000" />
+      <workItem from="1768681698536" duration="3571000" />
+      <workItem from="1768838539610" duration="4195000" />
+      <workItem from="1768945078391" duration="1798000" />
+      <workItem from="1769170874784" duration="221000" />
+      <workItem from="1769206562439" duration="1996000" />
+      <workItem from="1769247257717" duration="101000" />
+      <workItem from="1769247381727" duration="154000" />
+      <workItem from="1769250161778" duration="7968000" />
+      <workItem from="1769329587307" duration="7388000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
