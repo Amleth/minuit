@@ -23,10 +23,10 @@ impl Pattern {
 
     pub fn complete(&self) {
         if self.pitch_lane.len() < self.rhythm_lane.len() {
-            while self.pitch_lane.len() < self.rhythm_lane.len() {}
+            // while self.pitch_lane.len() < self.rhythm_lane.len() {}
         }
         if self.rhythm_lane.len() < self.pitch_lane.len() {
-            while self.rhythm_lane.len() < self.pitch_lane.len() {}
+            // while self.rhythm_lane.len() < self.pitch_lane.len() {}
         }
     }
 }

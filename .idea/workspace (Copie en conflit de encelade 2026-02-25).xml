@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="CargoProjects">
+    <cargoProject FILE="$PROJECT_DIR$/Cargo.toml">
+      <package file="$PROJECT_DIR$">
+        <feature name="default" enabled="true" />
+      </package>
+    </cargoProject>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3964be89-78ab-46e4-b900-844924f1f442" name="Changes" comment=".">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helpers.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/minuit.pest" beforeDir="false" afterPath="$PROJECT_DIR$/src/minuit.pest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pattern.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/pattern.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/score.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/score.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzz-minuit-python/D0C/explore.mn" beforeDir="false" afterPath="$PROJECT_DIR$/zzz-minuit-python/D0C/explore.mn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzz-minuit-python/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/zzz-minuit-python/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzz-minuit-python/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/zzz-minuit-python/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzz-minuit-python/run.bat" beforeDir="false" afterPath="$PROJECT_DIR$/zzz-minuit-python/run.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzz-minuit-python/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/zzz-minuit-python/run.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzz-minuit-python/src/MinuitParser.py" beforeDir="false" afterPath="$PROJECT_DIR$/zzz-minuit-python/src/MinuitParser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzz-minuit-python/src/Pattern.py" beforeDir="false" afterPath="$PROJECT_DIR$/zzz-minuit-python/src/Pattern.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzz-minuit-python/src/Track.py" beforeDir="false" afterPath="$PROJECT_DIR$/zzz-minuit-python/src/Track.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzz-minuit-python/src/constants.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzz-minuit-python/src/functions_symbols.py" beforeDir="false" afterPath="$PROJECT_DIR$/zzz-minuit-python/src/functions_symbols.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzz-minuit-python/src/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/zzz-minuit-python/src/helpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzz-minuit-python/src/minuit.lark" beforeDir="false" afterPath="$PROJECT_DIR$/zzz-minuit-python/src/minuit.lark" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzz-minuit-python/src/printer.py" beforeDir="false" afterPath="$PROJECT_DIR$/zzz-minuit-python/src/printer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zzz-minuit-python/uv.lock" beforeDir="false" afterPath="$PROJECT_DIR$/zzz-minuit-python/uv.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="RsBuildProfile:dev" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Rust File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="TCvcnYGp" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="36Z5zStcgS1WDRdcEMszzy0XUCX" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Cargo.Expand minuit::constants.executor": "Run",
+    "Cargo.Expand minuit::score.executor": "Run",
+    "Cargo.Install cargo-expand.executor": "Run",
+    "Cargo.Run minuit.executor": "Run",
+    "Cargo.Run.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.rust.reset.selective.auto.import": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "master",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/Users/amleth/Library/CloudStorage/Dropbox/repositories-synced/minuit-rust",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
+    "org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon": "",
+    "org.rust.first.attach.projects": "true",
+    "settings.editor.selected.configurable": "language.rust.cargo.check",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Run" type="CargoCommandRunConfiguration" factoryName="Cargo Command" nameIsGenerated="true">
+      <option name="buildProfileId" value="dev" />
+      <option name="command" value="run -- ./scores/explore.mn" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="RustProjectSettings">
+    <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3964be89-78ab-46e4-b900-844924f1f442" name="Changes" comment="" />
+      <created>1765201515512</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1765201515512</updated>
+      <workItem from="1765201517136" duration="968000" />
+      <workItem from="1765202586344" duration="164000" />
+      <workItem from="1765202840616" duration="526000" />
+      <workItem from="1765203444314" duration="846000" />
+      <workItem from="1765205512015" duration="755000" />
+      <workItem from="1765263512213" duration="12000" />
+      <workItem from="1765264054690" duration="24000" />
+      <workItem from="1765275099834" duration="291000" />
+      <workItem from="1765307755615" duration="121000" />
+      <workItem from="1765541266901" duration="96000" />
+      <workItem from="1765546361321" duration="57000" />
+      <workItem from="1765966445941" duration="23000" />
+      <workItem from="1766172571090" duration="681000" />
+      <workItem from="1766519972250" duration="768000" />
+      <workItem from="1766526814939" duration="1431000" />
+      <workItem from="1766863662314" duration="516000" />
+      <workItem from="1766864194465" duration="177000" />
+      <workItem from="1766864612161" duration="3086000" />
+      <workItem from="1766910700528" duration="926000" />
+      <workItem from="1767088501898" duration="307000" />
+      <workItem from="1767093300052" duration="49000" />
+      <workItem from="1767599940015" duration="6000" />
+      <workItem from="1767633190798" duration="7397000" />
+      <workItem from="1767694418340" duration="10000" />
+      <workItem from="1767694467729" duration="2291000" />
+      <workItem from="1767906524631" duration="724000" />
+      <workItem from="1768091041991" duration="3328000" />
+      <workItem from="1768094951921" duration="80000" />
+      <workItem from="1768095064594" duration="4436000" />
+      <workItem from="1768217326879" duration="1250000" />
+      <workItem from="1768229686016" duration="10000" />
+      <workItem from="1768287857713" duration="178000" />
+      <workItem from="1768288052401" duration="14000" />
+      <workItem from="1768288135067" duration="28000" />
+      <workItem from="1768333517331" duration="15000" />
+      <workItem from="1768374098988" duration="282000" />
+      <workItem from="1768374391752" duration="398000" />
+      <workItem from="1768604573805" duration="1780000" />
+      <workItem from="1768635833427" duration="1070000" />
+      <workItem from="1768681698536" duration="3571000" />
+      <workItem from="1768838539610" duration="4195000" />
+      <workItem from="1768945078391" duration="1798000" />
+      <workItem from="1769170874784" duration="221000" />
+      <workItem from="1769206562439" duration="1996000" />
+      <workItem from="1769247257717" duration="101000" />
+      <workItem from="1769247381727" duration="154000" />
+      <workItem from="1769250161778" duration="7968000" />
+      <workItem from="1769329587307" duration="7201000" />
+      <workItem from="1769359233918" duration="2000" />
+      <workItem from="1769360110695" duration="64000" />
+      <workItem from="1769360205861" duration="85000" />
+      <workItem from="1769360382734" duration="8017000" />
+      <workItem from="1769427860002" duration="6000" />
+      <workItem from="1769429513675" duration="7294000" />
+      <workItem from="1769437404118" duration="2078000" />
+      <workItem from="1769445319167" duration="6673000" />
+      <workItem from="1769505293121" duration="3466000" />
+      <workItem from="1769518898401" duration="133000" />
+      <workItem from="1769657870463" duration="6138000" />
+      <workItem from="1769685603674" duration="6432000" />
+      <workItem from="1769980259122" duration="1203000" />
+      <workItem from="1770497350534" duration="112000" />
+      <workItem from="1770498169207" duration="270000" />
+      <workItem from="1770751163898" duration="78000" />
+      <workItem from="1770751252159" duration="2317000" />
+      <workItem from="1770844073230" duration="654000" />
+      <workItem from="1771254093952" duration="18000" />
+      <workItem from="1771701766092" duration="3000000" />
+    </task>
+    <task id="LOCAL-00001" summary=".">
+      <option name="closed" value="true" />
+      <created>1769658233073</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1769658233073</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
+  </component>
+</project>

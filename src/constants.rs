@@ -3,9 +3,10 @@ use std::sync::LazyLock;
 
 // pub const PPQ: u16 = 480;
 pub const DEFAULT_MIDI_NOTE: u8 = 60;
+// pub const DEFAULT_BPM: u8 = 120;
 // pub const DEFAULT_RHYTHM_VALUE: u8 = 4;
 // pub const DEFAULT_VELOCITY_VALUE: u8 = 63;
-//
+
 pub static DEFAULT_PITCH_CLASS_SYMBOLS_TO_MIDI_NOTES: LazyLock<HashMap<char, u8>> =
     LazyLock::new(|| {
         let mut m = HashMap::new();

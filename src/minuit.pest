@@ -2,6 +2,7 @@
 WS               = _{ " " | "\t" }
 integer          = { ASCII_DIGIT+ }
 fraction         = { integer ~ "/" ~ integer }
+nolet            = { integer ~ "|" ~ integer }
 float            = { integer ~ "." ~ integer }
 
 // GLOBAL STRUCTURE
@@ -22,4 +23,4 @@ pitch            = { ('0'..'9'|'a'..'g'|'A'..'G'|"x"|"X"|"y"|"Y")  ~ ("+" | "-")
 
 // RHYTHM LANE
 rhythm_lane      = { (WS+ | rhythm_value)+ }
-rhythm_value     = @{ fraction | float | integer }
+rhythm_value     = @{ fraction | float | nolet | integer }
