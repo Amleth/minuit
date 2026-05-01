@@ -10,7 +10,7 @@
 
 # `🌴 Table des matières`
 
-- [Documentation](#-documentation-de-minuit)
+1. [Documentation](#-documentation-de-minuit)
 
 # `📼 Documentation de MINUIT`
 
