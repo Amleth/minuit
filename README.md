@@ -10,6 +10,8 @@
 
 # `🌴 Table des matières`
 
+- [Documentation](#-documentation-de-minuit)
+
 # `📼 Documentation de MINUIT`
 
 ## `🔣 Symboles`
