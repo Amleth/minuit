@@ -11,15 +11,15 @@
 # `🌴 Table des matières`
 
 1. [`📼 Documentation du langage MINUIT`](#-documentation-de-minuit)
-   1. [`🔣 Symboles`](#-symboles)
+   1. [`🀄 Symboles`](#-symboles)
       1. [`🥁 Expression des valeurs rythmiques`](#-expression-des-valeurs-rythmiques)
       2. [`🪉 Expression des hauteurs`](#-expression-des-hauteurs)
 2. [`🌃 Exemples`](#-exemples)
-   1. [`🦩 Crockett’s Theme (Jan Hammer, 1988)`]
+   1. [`🦩 Crockett’s Theme (Jan Hammer, 1988)`](#-crocketts-theme-jan-hammer-1988)
 
 # `📼 Documentation du langage MINUIT`
 
-## `🔣 Symboles`
+## `🀄 Symboles`
 
 ### `🥁 Expression des valeurs rythmiques`
 
@@ -222,8 +222,13 @@ Montage en parallèle :
 ## `🦩 Crockett’s Theme (Jan Hammer, 1988)`
 
 ```
-P0.p: <fad+> <fac+> <egc+> <Dgb>
-P0.r:
+$•=
+P0.p:
+  <fad+> <fac+> <egc+> <Dgb>
+  <gc+D+> <gbd+> <fad+> <fac+> <egc+> <Dgb>
+  <gc+D+> <gb+d+> <fad+>
+.
+P0.r: 2 2 1 1 • 2 2 2 2 1 1 • 2 2 0.5
 ```
 
 # `👾 Cool stuff`
