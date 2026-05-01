@@ -1,20 +1,37 @@
-# Minuit
+```
+#     #   #######   #     #   #     #   #######   #######
+##   ##      #      ##    #   #     #      #         #   
+# # # #      #      # #   #   #     #      #         #   
+#  #  #      #      #  #  #   #     #      #         #   
+#     #      #      #   # #   #     #      #         #   
+#     #      #      #    ##   #     #      #         #   
+#     #   #######   #     #    #####    #######      #   
+```
 
-## Documentation
+# `🌴 Table des matières`
 
-### SYMBOLES
+# `📼 Documentation de MINUIT`
 
-#### Expression des valeurs rythmiques
+## `🔣 Symboles`
 
-Les valeurs rythmiques se notent avec des nombres : `1` (ronde), `2` (blanche), `4` (noire), `8` (croche), `16` (double croche), `32` (triple croche), `64` (quadruple croche), `12` (croche de triolet), `17` (un dix-septième de ronde), `35` (un trente-cinquième de ronde), `1/4` (quatre rondes), `18/5` (cinq dix-huitièmes de ronde), etc.
+### `🥁 Expression des valeurs rythmiques`
 
-Le `.` a la même sémantique qu'en solfège. Ainsi, `1.` est une ronde pointée, et est équivalent au nombre `2/3` (trois blanches).
+Les valeurs rythmiques se notent avec des nombres : `1` (ronde), `2` (blanche),
+`4` (noire), `8` (croche), `16` (double croche), `32` (triple croche), `64`
+(quadruple croche), `12` (croche de triolet), `17` (un dix-septième de ronde),
+`35` (un trente-cinquième de ronde), `1/4` (quatre rondes), `18/5` (cinq
+dix-huitièmes de ronde), etc.
 
-L'underscore permet de lier des valeurs, comme sur une partition. Ainsi, `2_4` est une blanche liée à une noire, équivalent au nombre `4/3` (trois noires).
+Le `.` a la même sémantique qu'en solfège. Ainsi, `1.` est une ronde pointée, et
+est équivalent au nombre `2/3` (trois blanches).
 
-#### Expression des hauteurs
+L'underscore permet de lier des valeurs, comme sur une partition. Ainsi, `2_4`
+est une blanche liée à une noire, équivalent au nombre `4/3` (trois noires).
 
-Les douze classes de hauteur peuvent se noter avec des caractères issus de deux systèmes différents :
+#### 🪉 Expression des hauteurs
+
+Les douze classes de hauteur peuvent se noter avec des caractères issus de deux
+systèmes différents :
 
 |  Classe de hauteur   | Note MIDI | Système 1 | Système 2 |
 | :------------------: | :-------: | :-------: | :-------: |
@@ -33,13 +50,24 @@ Les douze classes de hauteur peuvent se noter avec des caractères issus de deux
 |       Si dièse       |    72     |           |     B     |
 
 - Les signes des deux systèmes peuvent être combinés.
-- Pour changer l'octave d'une note, on la fait suivre d'autant de `+` qu'on souhaite monter ou d'autant de `-` qu'on souhaite descendre. Exemples : `4+` correspond à la note MIDI 86 (E5), `g--` correspond à la note MIDI 43 (G2), `0+++` correspond à la note MIDI 96 (C7).
-- Les accords se notent en combinant des symboles de hauteurs au sein de chevrons. Exemple : `<0378>` est une triade mineure dont la fondamentale est `0` avec une quinté augmentée.
+- Pour changer l'octave d'une note, on la fait suivre d'autant de `+` qu'on
+  souhaite monter ou d'autant de `-` qu'on souhaite descendre. Exemples : `4+`
+  correspond à la note MIDI 86 (E5), `g--` correspond à la note MIDI 43 (G2),
+  `0+++` correspond à la note MIDI 96 (C7).
+- Les accords se notent en combinant des symboles de hauteurs au sein de
+  chevrons. Exemple : `<0378>` est une triade mineure dont la fondamentale est
+  `0` avec une quinté augmentée.
 - TODO : Notation par intervalles à partir d'un pitch de départ ou du dernier
   pitch.
 
-### CRÉATION DES PATTERNS
-<!-- 
+## `🧊 Création de patterns`
+
+```sh
+P0.P: 02400240457457
+P0.R: 44444444442442
+```
+
+<!--
 #### Hauteurs et rythme intégrés
 
 ```sh
@@ -165,7 +193,7 @@ Montage en parallèle :
 - default time unit = 4
 - default pattern length = content|measure -->
 
-## Cool stuff
+# `👾 Cool stuff`
 
 - https://tidalcycles.org/
 - https://opusmodus.com/
