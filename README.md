@@ -11,6 +11,7 @@
 # `🌴 Table des matières`
 
 1. [Documentation](#-documentation-de-minuit)
+1. [Exemples](#-exemples)
 
 # `📼 Documentation de MINUIT`
 
@@ -194,6 +195,8 @@ Montage en parallèle :
 - default GR = 4
 - default time unit = 4
 - default pattern length = content|measure -->
+
+# `🌃 Exemples`
 
 # `👾 Cool stuff`
 
