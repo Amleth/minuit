@@ -5,15 +5,19 @@
 #  #  #      #      #  #  #   #     #      #         #   
 #     #      #      #   # #   #     #      #         #   
 #     #      #      #    ##   #     #      #         #   
-#     #   #######   #     #    #####    #######      #   
+#     #   #######   #     #    #####    #######      #
 ```
 
 # `🌴 Table des matières`
 
-1. [Documentation](#-documentation-de-minuit)
-1. [Exemples](#-exemples)
+1. [`📼 Documentation du langage MINUIT`](#-documentation-de-minuit)
+   1. [`🔣 Symboles`](#-symboles)
+      1. [`🥁 Expression des valeurs rythmiques`](#-expression-des-valeurs-rythmiques)
+      2. [`🪉 Expression des hauteurs`](#-expression-des-hauteurs)
+2. [`🌃 Exemples`](#-exemples)
+   1. [`🦩 Crockett’s Theme (Jan Hammer, 1988)`]
 
-# `📼 Documentation de MINUIT`
+# `📼 Documentation du langage MINUIT`
 
 ## `🔣 Symboles`
 
@@ -31,9 +35,9 @@ est équivalent au nombre `2/3` (trois blanches).
 L'underscore permet de lier des valeurs, comme sur une partition. Ainsi, `2_4`
 est une blanche liée à une noire, équivalent au nombre `4/3` (trois noires).
 
-#### 🪉 Expression des hauteurs
+#### `🪉 Expression des hauteurs`
 
-Les douze classes de hauteur peuvent se noter avec des caractères issus de deux
+Les douze classes de hauteur peuvent se noter avec des caractères issus de
 systèmes différents :
 
 |  Classe de hauteur   | Note MIDI | Système 1 | Système 2 |
@@ -52,7 +56,24 @@ systèmes différents :
 |    Si / Do bémol     |    71     |   y / Y   |     b     |
 |       Si dièse       |    72     |           |     B     |
 
-- Les signes des deux systèmes peuvent être combinés.
+<!--
+d
+d#/rb
+r
+r#/mb
+m/fb
+f/m#
+f#/gb
+s
+s#/lb
+l
+l#/sb
+s/db
+s#/d
+-->
+
+<!-- - Les signes des systèmes peuvent être combinés. -->
+
 - Pour changer l'octave d'une note, on la fait suivre d'autant de `+` qu'on
   souhaite monter ou d'autant de `-` qu'on souhaite descendre. Exemples : `4+`
   correspond à la note MIDI 86 (E5), `g--` correspond à la note MIDI 43 (G2),
@@ -197,6 +218,13 @@ Montage en parallèle :
 - default pattern length = content|measure -->
 
 # `🌃 Exemples`
+
+## `🦩 Crockett’s Theme (Jan Hammer, 1988)`
+
+```
+P0.p: <fad+> <fac+> <egc+> <Dgb>
+P0.r:
+```
 
 # `👾 Cool stuff`
 
