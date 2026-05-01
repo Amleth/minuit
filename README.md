@@ -221,12 +221,13 @@ Montage en parallèle :
 
 ## `🦩 Crockett’s Theme (Jan Hammer, 1988)`
 
-```
+```sh
 $•=
+
 P0.p:
-  <fad+> <fac+> <egc+> <Dgb>
-  <gc+D+> <gbd+> <fad+> <fac+> <egc+> <Dgb>
-  <gc+D+> <gb+d+> <fad+>
+<fad+> <fac+> <egc+> <Dgb>
+<gc+D+> <gbd+> <fad+> <fac+> <egc+> <Dgb>
+<gc+D+> <gb+d+> <fad+>
 .
 P0.r: 2 2 1 1 • 2 2 2 2 1 1 • 2 2 0.5
 ```
