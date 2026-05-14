@@ -1,0 +1,3 @@
+class Pattern {
+    name: string;
+}

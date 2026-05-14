@@ -1,0 +1,9 @@
+ Arithmetique {
+    Exp     = Exp "+" Term  -- plus
+            | Term
+    Term    = Term "*" Fact -- times
+            | Fact
+    Fact    = "(" Exp ")"   -- paren
+            | number
+    number  = digit+
+  }

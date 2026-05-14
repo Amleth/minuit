@@ -1,27 +1,28 @@
 ```
-#     #   #######   #     #   #     #   #######   #######
-##   ##      #      ##    #   #     #      #         #   
-# # # #      #      # #   #   #     #      #         #   
-#  #  #      #      #  #  #   #     #      #         #   
-#     #      #      #   # #   #     #      #         #   
-#     #      #      #    ##   #     #      #         #   
-#     #   #######   #     #    #####    #######      #
+▒     ▒   ▒▒▒▒▒▒▒   ▒     ▒   ▒     ▒   ▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒
+▒▒   ▒▒      ▒      ▒▒    ▒   ▒     ▒      ▒         ▒   
+▒ ▒ ▒ ▒      ▒      ▒ ▒   ▒   ▒     ▒      ▒         ▒   
+▒  ▒  ▒      ▒      ▒  ▒  ▒   ▒     ▒      ▒         ▒   
+▒     ▒      ▒      ▒   ▒ ▒   ▒     ▒      ▒         ▒   
+▒     ▒      ▒      ▒    ▒▒   ▒     ▒      ▒         ▒   
+▒     ▒   ▒▒▒▒▒▒▒   ▒     ▒    ▒▒▒▒▒    ▒▒▒▒▒▒▒      ▒
 ```
 
 # `🌴 Table des matières`
 
 1. [`📼 Documentation du langage MINUIT`](#-documentation-de-minuit)
-   1. [`🀄 Symboles`](#-symboles)
-      1. [`🥁 Expression des valeurs rythmiques`](#-expression-des-valeurs-rythmiques)
-      2. [`🪉 Expression des hauteurs`](#-expression-des-hauteurs)
+   1. [`🍣 Symboles`](#-symboles)
+      1. [`🛢️ Expression des valeurs rythmiques`](#️-expression-des-valeurs-rythmiques)
+      2. [`🗻 Expression des hauteurs`](#-expression-des-hauteurs)
+   1. [`🧊 Création de patterns`](#-création-de-patterns)
 2. [`🌃 Exemples`](#-exemples)
    1. [`🦩 Crockett’s Theme (Jan Hammer, 1988)`](#-crocketts-theme-jan-hammer-1988)
 
 # `📼 Documentation du langage MINUIT`
 
-## `🀄 Symboles`
+## `🍣 Symboles`
 
-### `🥁 Expression des valeurs rythmiques`
+### `🛢️ Expression des valeurs rythmiques`
 
 Les valeurs rythmiques se notent avec des nombres : `1` (ronde), `2` (blanche),
 `4` (noire), `8` (croche), `16` (double croche), `32` (triple croche), `64`
@@ -32,47 +33,30 @@ dix-huitièmes de ronde), etc.
 Le `.` a la même sémantique qu'en solfège. Ainsi, `1.` est une ronde pointée, et
 est équivalent au nombre `2/3` (trois blanches).
 
-L'underscore permet de lier des valeurs, comme sur une partition. Ainsi, `2_4`
-est une blanche liée à une noire, équivalent au nombre `4/3` (trois noires).
+L'underscore permet de lier des valeurs, comme sur une partition. Par exemple,
+`2_4` est une blanche liée à une noire, équivalent au nombre `4/3` (trois
+noires) ; `1_1`sont deux rondes liées, équivalent à `0.5`.
 
-#### `🪉 Expression des hauteurs`
+#### `🗻 Expression des hauteurs`
 
 Les douze classes de hauteur peuvent se noter avec des caractères issus de
 systèmes différents :
 
-|  Classe de hauteur   | Note MIDI | Système 1 | Système 2 |
-| :------------------: | :-------: | :-------: | :-------: |
-|          Do          |    60     |     0     |     c     |
-| Do dièse / Ré bémol  |    61     |     1     |     C     |
-|          Ré          |    62     |     2     |     d     |
-| Ré dièse / Mi bémol  |    63     |     3     |     D     |
-|          Mi          |    64     |     4     |     e     |
-|          Fa          |    65     |     5     |   f / E   |
-| Fa dièse / Sol bémol |    66     |     6     |     F     |
-|         Sol          |    67     |     7     |     g     |
-| Sol dièse / La bémol |    68     |     8     |     G     |
-|          La          |    69     |     9     |     a     |
-| La dièse / Si bémol  |    70     |   x / X   |     A     |
-|    Si / Do bémol     |    71     |   y / Y   |     b     |
-|       Si dièse       |    72     |           |     B     |
-
-<!--
-d
-d#/rb
-r
-r#/mb
-m/fb
-f/m#
-f#/gb
-s
-s#/lb
-l
-l#/sb
-s/db
-s#/d
--->
-
-<!-- - Les signes des systèmes peuvent être combinés. -->
+|  Classe de hauteur   | Note MIDI | Système 1 | Système 2 | Système 3 |
+| :------------------: | :-------: | :-------: | :-------: | :-------: |
+|          Do          |    60     |     0     |     c     |     c     |
+| Do dièse / Ré bémol  |    61     |     1     |     C     |   c#/dß   |
+|          Ré          |    62     |     2     |     d     |     d     |
+| Ré dièse / Mi bémol  |    63     |     3     |     D     |   d#/eß   |
+|          Mi          |    64     |     4     |     e     |     e     |
+|          Fa          |    65     |     5     |   f / E   |     f     |
+| Fa dièse / Sol bémol |    66     |     6     |     F     |   f#/gß   |
+|         Sol          |    67     |     7     |     g     |     g     |
+| Sol dièse / La bémol |    68     |     8     |     G     |   g#/aß   |
+|          La          |    69     |     9     |     a     |     a     |
+| La dièse / Si bémol  |    70     |   x / X   |     A     |   a#/bß   |
+|    Si / Do bémol     |    71     |   y / Y   |     b     |   b/cß    |
+|       Si dièse       |    72     |           |     B     |    b#     |
 
 - Pour changer l'octave d'une note, on la fait suivre d'autant de `+` qu'on
   souhaite monter ou d'autant de `-` qu'on souhaite descendre. Exemples : `4+`
@@ -221,15 +205,28 @@ Montage en parallèle :
 
 ## `🦩 Crockett’s Theme (Jan Hammer, 1988)`
 
-```sh
+```
+§ https://en.wikipedia.org/wiki/Crockett%27s_Theme
+
 $•=
 
+$KSIG=1b
+
 P0.p:
-<fad+> <fac+> <egc+> <Dgb>
-<gc+D+> <gbd+> <fad+> <fac+> <egc+> <Dgb>
-<gc+D+> <gb+d+> <fad+>
-.
+<fad+> <fac+> <egc+> <eßgb>
+<gc+eß+> <gbd+> <fad+> <fac+> <egc+> <eßgb>
+<gc+eß+> <gb+d+> <fad+>
+°
+
 P0.r: 2 2 1 1 • 2 2 2 2 1 1 • 2 2 0.5
+
+P1.p:
+d*4f*4c*8D*8
+c*4g*4d*4f*4c*8D*8
+c*4g*4d*16
+°
+
+P1.r: 8
 ```
 
 # `👾 Cool stuff`
