@@ -1,9 +1,21 @@
- Arithmetique {
-    Exp     = Exp "+" Term  -- plus
-            | Term
-    Term    = Term "*" Fact -- times
-            | Fact
-    Fact    = "(" Exp ")"   -- paren
-            | number
-    number  = digit+
-  }
+Minuit {
+        Start = Line+
+        Line = PatternPitchLaneLine | PatternRhythmLaneLine
+        PatternPitchLaneLine = patternName "." "p" ":" PitchLane
+        PatternRhythmLaneLine = patternName "." "r" ":" RhythmLane
+
+        patternName = "P" patternId
+        patternId = digit+
+        
+        PitchLane = pitchSymbol+
+        pitchSymbol = pitchClassDodecaSymbol | pitchClassLetterSymbol
+        pitchClassDodecaSymbol = ("0" | "1" | "2" | "3"| "4" | "5" | "6" | "7" | "8" | "9" | "x" | "X" | "y" | "Y") octave?
+        pitchClassLetterSymbol = ("a" | "A" | "b" | "B" | "c" | "C" | "d" | "D" | "e" | "E" | "f" | "F" | "g" | "G") ("#" | "ß")? octave?
+        octave = "+"+ | "-"+
+
+        RhythmLane = rhythmSymbol+
+        rhythmSymbol = fraction | decimal | integer
+        decimal = integer "." integer
+        fraction = integer "/" integer
+        integer = digit+
+}
