@@ -11,7 +11,7 @@
             "program": "${workspaceFolder}/src/main.ts",
             "cwd": "${workspaceFolder}",
             "env": {},
-            "runtimeExecutable": "C:\\Users\\thoma\\scoop\\shims\\deno.EXE",
+            "runtimeExecutable": "deno",
             "runtimeArgs": [
                 "run",
                 "--unstable",
