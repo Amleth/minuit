@@ -161,7 +161,6 @@ END
 # Une séquence kick/snare avec triolets aléatoires
 P0?GR:8 = 00001001 00100{[000]|0}00 00{[111]|1}01001 0010000{[111]|1}
 P0?symbols = 0:50 1:111
-P0 > fir.mid
 ```
 
 ### ÉCRITURE
@@ -171,7 +170,6 @@ Une mélodie à la croche :
 ```
 P0 = 048319BBA84A47100BA00A0154B9000A
 P0?GR:8
-P0 > fir.mid
 ```
 
 Une séquence d'accords :
@@ -180,7 +178,6 @@ Une séquence d'accords :
 P0.n = <72+> <73+> <3A> <7-2>
 P0.r = 8*3 8*5
 P0.r = 4. 2_8 # équivalent
-P0 > fir.mid
 ```
 
 ### EFFETS
@@ -191,7 +188,6 @@ Une note unique répétée 111 fois avec 50% de chance que l'octave varie (-2,
 ```
 P0 = x
 P0 => (roct -2 +1 0.5) => P1
-P1 * 111 > fir.mid
 ```
 
 Effet séquencé :
