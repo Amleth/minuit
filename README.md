@@ -16,7 +16,7 @@
 
 ## `🍣 Symboles`
 
-### `🛢️ Expression des valeurs rythmiques`
+### `👾 Expression des valeurs rythmiques`
 
 Les valeurs rythmiques se notent avec des nombres : `1` (ronde), `2` (blanche),
 `4` (noire), `8` (croche), `16` (double croche), `32` (triple croche), `64`
@@ -31,7 +31,7 @@ est équivalent au nombre `2/3` (trois blanches).
 `2_4` est une blanche liée à une noire, équivalent au nombre `4/3` (trois
 noires) ; `1_1`sont deux rondes liées, équivalent à `0.5`. -->
 
-#### `🐍 Expression des hauteurs`
+#### `🌴 Expression des hauteurs`
 
 Les douze classes de hauteur peuvent se noter avec des caractères issus de
 systèmes différents :
@@ -91,16 +91,16 @@ P0.R: 44444444442442
 ```
 § https://en.wikipedia.org/wiki/Crockett%27s_Theme
 
-$•=
+$🟣=
 $KSIG=1b
 
 P0.p:
-<fad+> <fac+> <egc+> <e-gb>
-<gc+e-+> <gbd+> <fad+> <fac+> <egc+> <e-gb>
-<gc+e-+> <gb+d+> <fad+>
+<fad+><fac+><egc+><e-gb>
+<gc+e-+><gbd+><fad+><fac+><egc+><e-gb>
+<gc+e-+><gb+d+><fad+>
 °
 
-P0.r: 2 2 1 1 • 2 2 2 2 1 1 • 2 2 0.5
+P0.r: 2 2 1 1 🟣 2 2 2 2 1 1 🟣 2 2 0.5
 
 P1.p:
 d*4f*4c*8D*8
@@ -111,7 +111,7 @@ c*4g*4d*16
 P1.r: 8
 ```
 
-# `👾 Cool stuff`
+# ` Cool stuff`
 
 - https://tidalcycles.org/
 - https://opusmodus.com/
@@ -137,8 +137,6 @@ P0.PR=aabaababaabaaaba[bbbb]
 P0.P=aabaababaabaaababbbb
 P0.R=8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 32 32 32 32
 ```
-
-Les sauts d'octave persistant se notent avec les caractères `^` ou `/` (pour monter d'un octave) et `v` ou `\` (pour descendre d'un octave).
 
 #### Grille
 
@@ -175,7 +173,7 @@ P0?GR:8
 Une séquence d'accords :
 
 ```
-P0.n = <72+> <73+> <3A> <7-2>
+P0.n = <72+><73+><3A><7-2>
 P0.r = 8*3 8*5
 P0.r = 4. 2_8 # équivalent
 ```

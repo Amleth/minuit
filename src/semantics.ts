@@ -9,35 +9,83 @@ export type Context = {
 export function makeScore(grammar: ohm.Grammar, match: ohm.MatchResult): Score {
     const score = new Score();
     const semantics = grammar.createSemantics();
-    semantics.addOperation("ast(ctx)", {
+    semantics.addOperation("ast", {
         Start(lines) {
-            return lines.children.map(line => line.ast({ ...this.args.ctx } as Context));
+            return {
+                lines: lines.children.map(line => line.ast())
+            };
         },
-        Line(lane) {
-            return lane.ast({ ...this.args.ctx } as Context);
+        Line(line) {
+            return line.ast();
         },
-        PatternPitchLaneLine(_patternId, _: string, __: string, ___: string, lane: string) {
-            this.args.ctx.patternId = _patternId.sourceString;
-            return lane.ast({ ...this.args.ctx } as Context);
+        PatternPitchLaneLine(_patternId, _1: string, _2: string, _3: string, lane: string) {
+            return {
+                patternId: _patternId.sourceString,
+                pitchLane: lane.ast()
+            }
         },
-        PatternRhythmLaneLine(_patternId, _: string, __: string, ___: string, lane: string) {
-            this.args.ctx.patternId = _patternId.sourceString;
-            return lane.ast({ ...this.args.ctx } as Context);
+        PatternRhythmLaneLine(_patternId, _1: string, _2: string, _3: string, lane: string) {
+            return {
+                patternId: _patternId.sourceString,
+                rhythmLane: lane.ast()
+            }
         },
         PitchLane(pitchSymbolNodes) {
-            const pattern = score.getPattern(this.args.ctx.patternId);
-            if (pattern) {
-                pattern.pitchLane = pitchSymbolNodes.children.map(n => n.sourceString);
-            }
+            // return pitchSymbolNodes.children.map(n => n.sourceString);
+            return pitchSymbolNodes.children.map(n => n.ast());
+        },
+        pitchClassDodecaSymbol(_1, _2) {
+            return this.sourceString;
+        },
+        pitchClassLetterSymbol(_1, _2, _3) {
+            return this.sourceString;
+        },
+        chord(_1, pitchSymbols, _2) {
+            return {
+                chord: pitchSymbols.children.map(n => n.ast())
+            };
         },
         RhythmLane(rhythmSymbolNodes) {
-            const pattern = score.getPattern(this.args.ctx.patternId);
-            if (pattern) {
-                pattern.rhythmLane = rhythmSymbolNodes.children.map(n => n.sourceString);
+            return rhythmSymbolNodes.children.map(n => n.sourceString);
+        },
+        SequencingLine(_1, sequencedItems) {
+            return {
+                sequencedItems: sequencedItems.children.map(n => n.ast())
+            };
+        },
+        SequencedItem(_1) {
+            if (_1.isIteration()) {
+                return _1.asIteration().map(n => n.ast());
+            }
+            else if (_1.isTerminal()) {
+                return _1.sourceString;
+            }
+            else if (_1.isNonterminal()) {
+                return _1.ast();
             }
         },
+        HorizontalGroup(_leftSquareBracket, content, _rightSquareBracket) {
+            return {
+                sequencedItems: content.children.map(n => n.ast())
+            }
+        },
+        VerticalGroup(_leftAngleBracket, content, _rightAngleBracket) {
+            return {
+                parallelItems: content.children.map(n => n.ast())
+            }
+        },
+        patternName(_1, _2) {
+            return this.sourceString;
+        },
+        _terminal() {
+            return this.sourceString;
+        },
+        _iter(...children) {
+            // return children.map(n => n.ast());
+        }
     });
-    const ast = semantics(match).ast({ patternId: "", laneType: "" } as Context);
+    const ast = semantics(match).ast();
+    console.log(JSON.stringify(ast, null, 4));
 
     return score;
 }
