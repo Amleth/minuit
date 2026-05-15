@@ -10,6 +10,8 @@ const grammar = ohm.grammar(Deno.readTextFileSync("src/minuit.ohm"));
 
 sep();
 const scoreString: string = process(input)
+
+sep();
 console.log(scoreString);
 const match = grammar.match(scoreString);
 if (!match.succeeded()) {

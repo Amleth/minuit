@@ -38,23 +38,23 @@ systèmes différents :
 
 |  Classe de hauteur   | Note MIDI | Système 1 | Système 2 | Système 3 |
 | :------------------: | :-------: | :-------: | :-------: | :-------: |
-|    Do / Si dièse     |    60     |     0     |   c / B   |   c/b#    |
-| Do dièse / Ré bémol  |    61     |     1     |     C     |   c#/dß   |
+|    Do / Si dièse     |    60     |     0     |   c / B   |   c/b+    |
+| Do dièse / Ré bémol  |    61     |     1     |     C     |   c+/d-   |
 |          Ré          |    62     |     2     |     d     |     d     |
-| Ré dièse / Mi bémol  |    63     |     3     |     D     |   d#/eß   |
+| Ré dièse / Mi bémol  |    63     |     3     |     D     |   d+/e-   |
 |          Mi          |    64     |     4     |     e     |     e     |
 |          Fa          |    65     |     5     |   f / E   |     f     |
-| Fa dièse / Sol bémol |    66     |     6     |     F     |   f#/gß   |
+| Fa dièse / Sol bémol |    66     |     6     |     F     |   f+/g-   |
 |         Sol          |    67     |     7     |     g     |     g     |
-| Sol dièse / La bémol |    68     |     8     |     G     |   g#/aß   |
+| Sol dièse / La bémol |    68     |     8     |     G     |   g+/a-   |
 |          La          |    69     |     9     |     a     |     a     |
-| La dièse / Si bémol  |    70     |   x / X   |     A     |   a#/bß   |
-|    Si / Do bémol     |    71     |   y / Y   |     b     |   b/cß    |
+| La dièse / Si bémol  |    70     |   x / X   |     A     |   a+/b-   |
+|    Si / Do bémol     |    71     |   y / Y   |     b     |   b/c-    |
 
-- Pour changer l'octave d'une note, on la fait suivre d'autant de `+` qu'on
-  souhaite monter ou d'autant de `-` qu'on souhaite descendre. Exemples : `4+`
-  correspond à la note MIDI 86 (E5), `g--` correspond à la note MIDI 43 (G2),
-  `0+++` correspond à la note MIDI 96 (C7).
+- Pour changer l'octave d'une note, on la fait suivre d'autant de `'` qu'on
+  souhaite monter ou d'autant de `,` qu'on souhaite descendre. Exemples : `4'`
+  correspond à la note MIDI 86 (E5), `g,,` correspond à la note MIDI 43 (G2),
+  `0'''` correspond à la note MIDI 96 (C7).
 - Les accords se notent en combinant des symboles de hauteurs au sein de
   chevrons. Exemple : `<0378>` est une triade mineure dont la fondamentale est
   `0` avec une quinté augmentée.
@@ -95,9 +95,9 @@ $•=
 $KSIG=1b
 
 P0.p:
-<fad+> <fac+> <egc+> <eßgb>
-<gc+eß+> <gbd+> <fad+> <fac+> <egc+> <eßgb>
-<gc+eß+> <gb+d+> <fad+>
+<fad+> <fac+> <egc+> <e-gb>
+<gc+e-+> <gbd+> <fad+> <fac+> <egc+> <e-gb>
+<gc+e-+> <gb+d+> <fad+>
 °
 
 P0.r: 2 2 1 1 • 2 2 2 2 1 1 • 2 2 0.5
