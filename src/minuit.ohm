@@ -15,7 +15,9 @@ Minuit {
         octave = "'"+ | ","+
 
         RhythmLane = rhythmSymbol+
-        rhythmSymbol = fraction | decimal | integer
+        rhythmSymbol = tie | baseRhythmSymbol
+        baseRhythmSymbol = fraction | decimal | integer
+        tie = baseRhythmSymbol ("_" baseRhythmSymbol)+
         decimal = integer "." integer
         fraction = integer "/" integer
         integer = digit+

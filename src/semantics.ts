@@ -46,7 +46,21 @@ export function makeScore(grammar: ohm.Grammar, match: ohm.MatchResult): Score {
             };
         },
         RhythmLane(rhythmSymbolNodes) {
-            return rhythmSymbolNodes.children.map(n => n.sourceString);
+            return rhythmSymbolNodes.children.map(n => n.ast());
+        },
+        decimal(_1, _2, _3) {
+            return this.sourceString;
+        },
+        fraction(_1, _2, _3) {
+            return this.sourceString;
+        },
+        integer(_1) {
+            return this.sourceString;
+        },
+        tie(_1, _2, _3) {
+            return {
+                tie: this.sourceString.split("_")
+            };
         },
         SequencingLine(_1, sequencedItems) {
             return {
