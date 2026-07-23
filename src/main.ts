@@ -1,4 +1,4 @@
-import { Line } from "./consts.ts";
+import { type Line } from "./consts.ts";
 import clean from "./preprocesing/cleaning.ts";
 import substituteSymboles from "./preprocesing/symbolSubstitution.ts";
 import analyse from "./tokenization/lineAnalysis.ts";
