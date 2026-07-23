@@ -1,10 +1,16 @@
-$🌲=4
-$🍄=2
+# Comment définir les groupes ?
 
-#dfjsd
+P0...
+0*16                # G1
+(pick _PC_)         # G2
+°(roct -2 1 37%)    # f(G2)
+3*16                # G3
 
-P0.p = 1🍄3🌲5+67--890xXyYcCdD-eEfF++gGxXyY++
-P0.r = 🌲 8 1/🍄 17/789 1.2
-
-P1.p=d
-P1.r=4 4 4|3 4
+X*32                # G4
+<                   # Début G5
+0378                # G5
+0(pick _PC_)        # G5
+01Y                 # G5
+>°(roct -3 0 69%)   # Fin G5 +  f(G5)
+Y*32                # G6
+.

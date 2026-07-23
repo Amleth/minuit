@@ -1,4 +1,8 @@
 {
     "python-envs.pythonProjects": [],
-    "deno.enable": true
+    "deno.enable": true,
+    "cSpell.words": [
+        "duodecimal",
+        "Rhythm"
+    ]
 }

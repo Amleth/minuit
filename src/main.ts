@@ -1,24 +1,13 @@
-import * as ohm from "https://esm.sh/ohm-js";
-import { Score } from "./model/Score.ts";
-import { process } from "./scoreFileStringProcessing.ts";
-import { makeScore } from "./semantics.ts";
+import { Line } from "./consts.ts";
+import clean from "./preprocesing/cleaning.ts";
+import substituteSymboles from "./preprocesing/symbolSubstitution.ts";
+import analyse from "./tokenization/lineAnalysis.ts";
 
-const sep = () => console.log('🍣'.repeat(33));
-
-const input = Deno.readTextFileSync(Deno.args[0]);
-const grammar = ohm.grammar(Deno.readTextFileSync("src/minuit.ohm"));
+const sep = () => console.log("🌲".repeat(33));
 
 sep();
-const scoreString: string = process(input);
-
-sep();
-console.log(scoreString);
-const match = grammar.match(scoreString);
-if (!match.succeeded()) {
-    console.log('❌', (match as ohm.FailedMatchResult).message);
-    Deno.exit(1);
-}
-
-sep();
-const score: Score = makeScore(grammar, match);
-score.print();
+let input = Deno.readTextFileSync(Deno.args[0]);
+input = substituteSymboles(input);
+input = clean(input);
+const lines: Line[] = analyse(input);
+console.log(lines);
