@@ -1,17 +1,22 @@
-import {
-	CLOSE_GROUP,
-	OPEN_GROUP,
-	CLOSE_PATTERN_SYMBOL,
-	OPEN_PATTERN_SYMBOL,
-} from "../consts.ts";
+import { MidnightSymbols, TokenType } from "../consts.ts";
 import { unbalancedSymbolsError } from "../errors.ts";
 import type { Line } from "../structs.ts";
 import { areSymbolsBalanced } from "./common.ts";
 
 export default function parseLine(line: Line): Line {
 	for (const pair of [
-		[OPEN_GROUP, CLOSE_GROUP],
-		[OPEN_PATTERN_SYMBOL, CLOSE_PATTERN_SYMBOL],
+		[
+			MidnightSymbols[TokenType.SYMBOL_CHORD_OPEN],
+			MidnightSymbols[TokenType.SYMBOL_CHORD_CLOSE],
+		],
+		[
+			MidnightSymbols[TokenType.SYMBOL_GROUP_OPEN],
+			MidnightSymbols[TokenType.SYMBOL_GROUP_CLOSE],
+		],
+		[
+			MidnightSymbols[TokenType.SYMBOL_PATTERN_VARIABLE_OPEN],
+			MidnightSymbols[TokenType.SYMBOL_PATTERN_VARIABLE_CLOSE],
+		],
 	]) {
 		if (!areSymbolsBalanced(line.patternValues, pair[0], pair[1])) {
 			throw unbalancedSymbolsError(line, pair[0], pair[1]);

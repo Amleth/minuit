@@ -1,10 +1,27 @@
-export const COMMENT = "#";
-export const OCTAVE_UP = "'";
-export const OCTAVE_DOWN = ",";
-export const OPEN_GROUP = "(";
-export const CLOSE_GROUP = ")";
-export const OPEN_PATTERN_SYMBOL = "{";
-export const CLOSE_PATTERN_SYMBOL = "}";
+export enum TokenType {
+	COMMENT = "COMMENT",
+	SYMBOL_CHORD_CLOSE = "SYMBOL_CHORD_CLOSE",
+	SYMBOL_CHORD_OPEN = "SYMBOL_CHORD_OPEN",
+	SYMBOL_GROUP_CLOSE = "SYMBOL_GROUP_CLOSE",
+	SYMBOL_GROUP_OPEN = "SYMBOL_GROUP_OPEN",
+	SYMBOL_OCTAVE_DOWN = "SYMBOL_OCTAVE_DOWN",
+	SYMBOL_OCTAVE_UP = "SYMBOL_OCTAVE_UP",
+	SYMBOL_PATTERN_VARIABLE_OPEN = "SYMBOL_PATTERN_VARIABLE_OPEN",
+	SYMBOL_PATTERN_VARIABLE_CLOSE = "SYMBOL_PATTERN_VARIABLE_CLOSE",
+	PITCH_DUODECIMAL_VALUE = "PITCH_DUODECIMAL_VALUE",
+}
+
+export const MidnightSymbols = {
+	[TokenType.COMMENT]: "#",
+	[TokenType.SYMBOL_CHORD_CLOSE]: ">",
+	[TokenType.SYMBOL_CHORD_OPEN]: "<",
+	[TokenType.SYMBOL_GROUP_CLOSE]: ")",
+	[TokenType.SYMBOL_GROUP_OPEN]: "(",
+	[TokenType.SYMBOL_OCTAVE_DOWN]: ",",
+	[TokenType.SYMBOL_OCTAVE_UP]: "'",
+	[TokenType.SYMBOL_PATTERN_VARIABLE_OPEN]: "{",
+	[TokenType.SYMBOL_PATTERN_VARIABLE_CLOSE]: "}",
+};
 
 export enum ContextsEnum {
 	FunctionTransformator,
@@ -24,7 +41,7 @@ export enum LineTypeEnum {
 	V = "Velocity pattern",
 }
 
-export const DUODECIMAL_VALUES = [
+export const PITCH_DUODECIMAL_VALUES = [
 	"0",
 	"1",
 	"2",
@@ -61,10 +78,6 @@ export const lineStarts: Record<LineTypeEnum, LineDesc> = {
 	[LineTypeEnum.RS]: new LineDesc(/^(RS)(\d+)=(.*)/, () => null),
 	[LineTypeEnum.V]: new LineDesc(/^(V)(\d+)=(.*)/, () => null),
 };
-
-export enum TokenType {
-	DUODECIMAL_VALUE,
-}
 
 export class Token {
 	public type: TokenType;
