@@ -1,7 +1,6 @@
 import { type LineTypeEnum, lineStarts } from "../consts.ts";
 import { Line } from "../structs.ts";
 
-//TODO d'abord rassembler les lignes séparées
 export default function (input: string): Line[] {
 	const lines: Line[] = [];
 	const inputLines = input.split(/\r?\n/);
@@ -22,7 +21,7 @@ export default function (input: string): Line[] {
 				break;
 			}
 		}
-		if (!matches) {
+		if (!matches && lines.length > 1) {
 			lines[i - 1].content += ` ${inputLines[i]}`;
 			lines[i - 1].patternValues += ` ${inputLines[i]}`;
 		}

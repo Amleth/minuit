@@ -1,11 +1,5 @@
 ```
-▒     ▒   ▒▒▒▒▒▒▒   ▒     ▒   ▒     ▒   ▒▒▒▒▒▒▒   ▒▒▒▒▒▒▒
-▒▒   ▒▒      ▒      ▒▒    ▒   ▒     ▒      ▒         ▒   
-▒ ▒ ▒ ▒      ▒      ▒ ▒   ▒   ▒     ▒      ▒         ▒   
-▒  ▒  ▒      ▒      ▒  ▒  ▒   ▒     ▒      ▒         ▒   
-▒     ▒      ▒      ▒   ▒ ▒   ▒     ▒      ▒         ▒   
-▒     ▒      ▒      ▒    ▒▒   ▒     ▒      ▒         ▒   
-▒     ▒   ▒▒▒▒▒▒▒   ▒     ▒    ▒▒▒▒▒    ▒▒▒▒▒▒▒      ▒
+M I N U I T
 ```
 
 <!--
@@ -36,20 +30,20 @@ noires) ; `1_1`sont deux rondes liées, équivalent à `0.5`. -->
 Les douze classes de hauteur peuvent se noter avec des caractères issus de
 systèmes différents :
 
-|  Classe de hauteur   | Note MIDI | Système 1 | Système 2 | Système 3 |
-| :------------------: | :-------: | :-------: | :-------: | :-------: |
-|    Do / Si dièse     |    60     |     0     |   c / B   |   c/b+    |
-| Do dièse / Ré bémol  |    61     |     1     |     C     |   c+/d-   |
-|          Ré          |    62     |     2     |     d     |     d     |
-| Ré dièse / Mi bémol  |    63     |     3     |     D     |   d+/e-   |
-|          Mi          |    64     |     4     |     e     |     e     |
-|          Fa          |    65     |     5     |   f / E   |     f     |
-| Fa dièse / Sol bémol |    66     |     6     |     F     |   f+/g-   |
-|         Sol          |    67     |     7     |     g     |     g     |
-| Sol dièse / La bémol |    68     |     8     |     G     |   g+/a-   |
-|          La          |    69     |     9     |     a     |     a     |
-| La dièse / Si bémol  |    70     |   x / X   |     A     |   a+/b-   |
-|    Si / Do bémol     |    71     |   y / Y   |     b     |   b/c-    |
+|  Classe de hauteur   | Note MIDI | Système duodécimal | Système 2 | Système 3 |
+| :------------------: | :-------: | :----------------: | :-------: | :-------: |
+|    Do / Si dièse     |    60     |         0          |   c / B   |   c/b+    |
+| Do dièse / Ré bémol  |    61     |         1          |     C     |   c+/d-   |
+|          Ré          |    62     |         2          |     d     |     d     |
+| Ré dièse / Mi bémol  |    63     |         3          |     D     |   d+/e-   |
+|          Mi          |    64     |         4          |     e     |     e     |
+|          Fa          |    65     |         5          |   f / E   |     f     |
+| Fa dièse / Sol bémol |    66     |         6          |     F     |   f+/g-   |
+|         Sol          |    67     |         7          |     g     |     g     |
+| Sol dièse / La bémol |    68     |         8          |     G     |   g+/a-   |
+|          La          |    69     |         9          |     a     |     a     |
+| La dièse / Si bémol  |    70     |       x / X        |     A     |   a+/b-   |
+|    Si / Do bémol     |    71     |       y / Y        |     b     |   b/c-    |
 
 - Pour changer l'octave d'une note, on la fait suivre d'autant de `'` qu'on
   souhaite monter ou d'autant de `,` qu'on souhaite descendre. Exemples : `4'`
@@ -61,13 +55,6 @@ systèmes différents :
 - TODO : Notation par intervalles à partir d'un pitch de départ ou du dernier
   pitch.
 
-## `🧊 Création de patterns`
-
-```sh
-P0.P: 02400240457457
-P0.R: 44444444442442
-```
-
 ## `🎍 Valeurs par défaut des paramètres`
 
 - global BPM = 120
@@ -77,12 +64,6 @@ P0.R: 44444444442442
 - default GR = 4
 - default time unit = 4
 - default pattern length = content|measure
-
-# `🤖 Cycles du parser MINUIT`
-
-- Substitution des symboles
-- Complétion des patterns (optionnelle)
-- Conversion des valeurs en valeurs MIDI
 
 # `🌃 Exemples`
 
@@ -94,11 +75,11 @@ P0.R: 44444444442442
 $🟣=
 $KSIG=1b
 
-P0.p:
+P0=
 <fad+><fac+><egc+><e-gb>
 <gc+e-+><gbd+><fad+><fac+><egc+><e-gb>
 <gc+e-+><gb+d+><fad+>
-°
+.
 
 P0.r: 2 2 1 1 🟣 2 2 2 2 1 1 🟣 2 2 0.5
 

@@ -1,5 +1,5 @@
-import type { Line } from "../consts.ts";
 import { LineTypeEnum } from "../consts.ts";
+import type { Line } from "../structs.ts";
 import { tokenize } from "./duodecimalPitchPattern.ts";
 
 export function chooseTokenizer(line: Line): Line {

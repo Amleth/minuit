@@ -7,7 +7,6 @@ export class Line {
 	public tokens: Token[];
 	public patternNumber: number;
 	public patternValues: string;
-	public isValid: boolean = true;
 
 	constructor(
 		number: number,

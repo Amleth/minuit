@@ -1,8 +1,10 @@
 export const COMMENT = "#";
 export const OCTAVE_UP = "'";
 export const OCTAVE_DOWN = ",";
-export const GROUP_OPEN = "(";
-export const GROUP_CLOSE = ")";
+export const OPEN_GROUP = "(";
+export const CLOSE_GROUP = ")";
+export const OPEN_PATTERN_SYMBOL = "{";
+export const CLOSE_PATTERN_SYMBOL = "}";
 
 export enum ContextsEnum {
 	FunctionTransformator,
