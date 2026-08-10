@@ -10,10 +10,10 @@ const sep = () => console.log("🌲".repeat(33));
 sep();
 let input = Deno.readTextFileSync(Deno.args[0]);
 input = substituteSymbols(input);
-console.log(input);
 input = clean(input);
 const lines: Line[] = analyse(input);
 for (const line of lines) {
 	chooseTokenizer(line);
-	parseLine(line);
+	const parsedLine = parseLine(line);
+	console.log(parsedLine);
 }

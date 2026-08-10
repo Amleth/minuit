@@ -20,13 +20,17 @@ export function tokenize(input: string): Token[] {
 		) {
 			tokens[tokens.length - 1].value += c;
 		}
-		switch (c) {
-			case MidnightSymbols[TokenType.SYMBOL_CHORD_OPEN]:
-				tokens.push(new Token(TokenType.SYMBOL_CHORD_OPEN, c));
-				break;
-			case MidnightSymbols[TokenType.SYMBOL_CHORD_CLOSE]:
-				tokens.push(new Token(TokenType.SYMBOL_CHORD_CLOSE, c));
-				break;
+		for (const tokenType of [
+			TokenType.SYMBOL_CHORD_OPEN,
+			TokenType.SYMBOL_CHORD_CLOSE,
+			TokenType.SYMBOL_GROUP_OPEN,
+			TokenType.SYMBOL_GROUP_CLOSE,
+			TokenType.SYMBOL_PATTERN_VARIABLE_OPEN,
+			TokenType.SYMBOL_PATTERN_VARIABLE_CLOSE,
+		]) {
+			if (c === MidnightSymbols[tokenType]) {
+				tokens.push(new Token(tokenType, c));
+			}
 		}
 	}
 
