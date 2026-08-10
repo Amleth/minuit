@@ -1,27 +1,22 @@
+export const SYMBOL_COMMENT = "#";
+export const SYMBOL_CHORD_OPEN = "<";
+export const SYMBOL_CHORD_CLOSE = ">";
+export const SYMBOL_GROUP_OPEN = "(";
+export const SYMBOL_GROUP_CLOSE = ")";
+export const SYMBOL_OCTAVE_UP = "'";
+export const SYMBOL_OCTAVE_DOWN = ",";
+export const SYMBOL_PATTERN_VARIABLE_OPEN = "{";
+export const SYMBOL_PATTERN_VARIABLE_CLOSE = "}";
+
 export enum TokenType {
 	COMMENT = "COMMENT",
 	SYMBOL_CHORD_CLOSE = "SYMBOL_CHORD_CLOSE",
 	SYMBOL_CHORD_OPEN = "SYMBOL_CHORD_OPEN",
 	SYMBOL_GROUP_CLOSE = "SYMBOL_GROUP_CLOSE",
 	SYMBOL_GROUP_OPEN = "SYMBOL_GROUP_OPEN",
-	SYMBOL_OCTAVE_DOWN = "SYMBOL_OCTAVE_DOWN",
-	SYMBOL_OCTAVE_UP = "SYMBOL_OCTAVE_UP",
-	SYMBOL_PATTERN_VARIABLE_OPEN = "SYMBOL_PATTERN_VARIABLE_OPEN",
-	SYMBOL_PATTERN_VARIABLE_CLOSE = "SYMBOL_PATTERN_VARIABLE_CLOSE",
+	PATTERN_REFERENCE = "PATTERN_REFERENCE",
 	PITCH_DUODECIMAL_VALUE = "PITCH_DUODECIMAL_VALUE",
 }
-
-export const MidnightSymbols = {
-	[TokenType.COMMENT]: "#",
-	[TokenType.SYMBOL_CHORD_CLOSE]: ">",
-	[TokenType.SYMBOL_CHORD_OPEN]: "<",
-	[TokenType.SYMBOL_GROUP_CLOSE]: ")",
-	[TokenType.SYMBOL_GROUP_OPEN]: "(",
-	[TokenType.SYMBOL_OCTAVE_DOWN]: ",",
-	[TokenType.SYMBOL_OCTAVE_UP]: "'",
-	[TokenType.SYMBOL_PATTERN_VARIABLE_OPEN]: "{",
-	[TokenType.SYMBOL_PATTERN_VARIABLE_CLOSE]: "}",
-};
 
 export enum ContextsEnum {
 	FunctionTransformator,
@@ -30,54 +25,57 @@ export enum ContextsEnum {
 }
 
 export enum LineTypeEnum {
-	CC = "Continuous Controller values",
-	G = "Drum grid",
-	PA = "Pitches pattern with letters and accidentals",
-	PD = "Pitches pattern with duodecimal values",
-	PL = "Pitches pattern with letters",
-	PM = "Pitches pattern with MIDI note numbers",
-	R = "Rhythm pattern with note values",
-	RS = "Rhythm pattern with ms values",
-	V = "Velocity pattern",
+	CC,
+	G,
+	PA,
+	PD,
+	PL,
+	PM,
+	R,
+	RS,
+	V,
 }
 
-export const PITCH_DUODECIMAL_VALUES = [
-	"0",
-	"1",
-	"2",
-	"3",
-	"4",
-	"5",
-	"6",
-	"7",
-	"8",
-	"9",
-	"x",
-	"X",
-	"y",
-	"Y",
-];
-
-class LineDesc {
-	public regexp: RegExp;
-	public fn: any;
-	constructor(regexp: RegExp, fn: any) {
-		this.regexp = regexp;
-		this.fn = fn;
-	}
-}
-
-export const lineStarts: Record<LineTypeEnum, LineDesc> = {
-	[LineTypeEnum.CC]: new LineDesc(/^(CC\d+)_(\d+)=(.*)/, () => null),
-	[LineTypeEnum.G]: new LineDesc(/^(G\d+)_(\d+)=(.*)/, () => null),
-	[LineTypeEnum.PA]: new LineDesc(/^(PA)(\d+)=(.*)/, () => null),
-	[LineTypeEnum.PD]: new LineDesc(/^(PD)(\d+)=(.*)/, () => null),
-	[LineTypeEnum.PL]: new LineDesc(/^(PL)(\d+)=(.*)/, () => null),
-	[LineTypeEnum.PM]: new LineDesc(/^(PM)(\d+)=(.*)/, () => null),
-	[LineTypeEnum.R]: new LineDesc(/^(R)(\d+)=(.*)/, () => null),
-	[LineTypeEnum.RS]: new LineDesc(/^(RS)(\d+)=(.*)/, () => null),
-	[LineTypeEnum.V]: new LineDesc(/^(V)(\d+)=(.*)/, () => null),
+export const PATTERN_TYPES = {
+	CC: {
+		description: "Continuous Controller values",
+		lineRegex: /^(CC\d+)_(\d+)=(.*)/,
+	},
+	G: {
+		description: "Drum grid",
+		lineRegex: /^(G\d+)_(\d+)=(.*)/,
+	},
+	PA: {
+		description: "Pitches pattern with letters and accidentals",
+		lineRegex: /^(PA)(\d+)=(.*)/,
+	},
+	PD: {
+		description: "Pitches pattern with duodecimal values",
+		lineRegex: /^(PD)(\d+)=(.*)/,
+	},
+	PL: {
+		description: "Pitches pattern with letters",
+		lineRegex: /^(PL)(\d+)=(.*)/,
+	},
+	PM: {
+		description: "Pitches pattern with MIDI note numbers",
+		lineRegex: /^(PM)(\d+)=(.*)/,
+	},
+	R: {
+		description: "Rhythm pattern with note values",
+		lineRegex: /^(R)(\d+)=(.*)/,
+	},
+	RS: {
+		description: "Rhythm pattern with ms values",
+		lineRegex: /^(RS)(\d+)=(.*)/,
+	},
+	V: {
+		description: "Velocity pattern",
+		lineRegex: /^(V)(\d+)=(.*)/,
+	},
 };
+
+export const PITCH_DUODECIMAL_VALUES = [..."0123456789xXyY"];
 
 export class Token {
 	public type: TokenType;

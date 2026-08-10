@@ -1,4 +1,4 @@
-import { type LineTypeEnum, lineStarts } from "../consts.ts";
+import { PATTERN_TYPES } from "../consts.ts";
 import { Line } from "../structs.ts";
 
 export default function (input: string): Line[] {
@@ -6,14 +6,13 @@ export default function (input: string): Line[] {
 	const inputLines = input.split(/\r?\n/);
 	for (let i = 0; i < inputLines.length; i++) {
 		let matches = null;
-		for (const lineType in lineStarts) {
-			const regexp = lineStarts[lineType as LineTypeEnum].regexp;
-			matches = inputLines[i].match(regexp);
+		for (const [k, v] of Object.entries(PATTERN_TYPES)) {
+			matches = inputLines[i].match(v.lineRegex);
 			if (matches) {
 				const line = new Line(
 					i,
 					inputLines[i],
-					lineType as LineTypeEnum,
+					v,
 					parseInt(matches[2], 10),
 					matches[3],
 				);

@@ -3,7 +3,7 @@ import type { LineTypeEnum, Token } from "./consts.ts";
 export class Line {
 	public number: number;
 	public content: string;
-	public type: LineTypeEnum;
+	public type: object;
 	public tokens: Token[];
 	public patternNumber: number;
 	public patternValues: string;
@@ -11,7 +11,7 @@ export class Line {
 	constructor(
 		number: number,
 		content: string,
-		type: LineTypeEnum,
+		type: object,
 		patternNumber: number,
 		patternValues: string,
 	) {

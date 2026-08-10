@@ -14,6 +14,6 @@ input = clean(input);
 const lines: Line[] = analyse(input);
 for (const line of lines) {
 	chooseTokenizer(line);
-	const parsedLine = parseLine(line);
-	console.log(parsedLine);
+	console.log(line);
+	parseLine(line);
 }
