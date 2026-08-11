@@ -4,8 +4,8 @@ import {
 	SYMBOL_CHORD_CLOSE,
 	SYMBOL_CHORD_OPEN,
 	SYMBOL_FUNCTION_CLOSE,
-	SYMBOL_FUNCTION_GENERATOR,
 	SYMBOL_FUNCTION_OPEN,
+	SYMBOL_FUNCTION_TRANSFORMATOR,
 	SYMBOL_GROUP_CLOSE,
 	SYMBOL_GROUP_OPEN,
 	SYMBOL_OCTAVE_DOWN,
@@ -41,7 +41,10 @@ export default class DuodecimalPitchValuesSequenceLexer {
 			for (const symbol of [
 				[SYMBOL_CHORD_OPEN, TokenType.SYMBOL_CHORD_OPEN],
 				[SYMBOL_CHORD_CLOSE, TokenType.SYMBOL_CHORD_CLOSE],
-				[SYMBOL_FUNCTION_GENERATOR, TokenType.SYMBOL_FUNCTION_GENERATOR],
+				[
+					SYMBOL_FUNCTION_TRANSFORMATOR,
+					TokenType.SYMBOL_FUNCTION_TRANSFORMATOR,
+				],
 			]) {
 				if (char === symbol[0]) {
 					this.tokens.push(new Token(symbol[1] as TokenType, char));
