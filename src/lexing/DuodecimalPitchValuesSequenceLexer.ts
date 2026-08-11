@@ -59,8 +59,6 @@ export default class DuodecimalPitchValuesSequenceLexer<T> {
 	}
 
 	private readReference(): Token {
-		const start = this.pos;
-
 		const match = this.input.slice(this.pos).match(/^\{(PD\d+)\}/);
 		if (match) {
 			console.log(match[1]);

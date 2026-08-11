@@ -1,3 +1,5 @@
+import { Line } from "./structs.ts";
+
 export const SYMBOL_COMMENT = "#";
 export const SYMBOL_CHORD_OPEN = "<";
 export const SYMBOL_CHORD_CLOSE = ">";
@@ -24,54 +26,69 @@ export enum ContextsEnum {
 	Group,
 }
 
-export enum LineTypeEnum {
-	CC,
-	G,
-	PA,
-	PD,
-	PL,
-	PM,
-	R,
-	RS,
-	V,
+export enum LineTypesEnum {
+	CC = "CC",
+	G = "G",
+	PA = "PA",
+	PD = "PD",
+	PL = "PL",
+	PM = "PM",
+	R = "R",
+	RS = "RS",
+	V = "V",
 }
 
-export const PATTERN_TYPES = {
-	CC: {
+type LineType = {
+	description: string;
+	lineRegExp: RegExp;
+	type: LineTypesEnum;
+};
+
+export const LINE_TYPES: Record<LineTypesEnum, LineType> = {
+	[LineTypesEnum.CC]: {
 		description: "Continuous Controller values",
-		lineRegex: /^(CC\d+)_(\d+)=(.*)/,
+		lineRegExp: /^(CC\d+)_(\d+)=(.*)/,
+		type: LineTypesEnum.CC,
 	},
-	G: {
+	[LineTypesEnum.G]: {
 		description: "Drum grid",
-		lineRegex: /^(G\d+)_(\d+)=(.*)/,
+		lineRegExp: /^(G\d+)_(\d+)=(.*)/,
+		type: LineTypesEnum.G,
 	},
-	PA: {
+	[LineTypesEnum.PA]: {
 		description: "Pitches pattern with letters and accidentals",
-		lineRegex: /^(PA)(\d+)=(.*)/,
+		lineRegExp: /^(PA)(\d+)=(.*)/,
+		type: LineTypesEnum.PA,
 	},
-	PD: {
+	[LineTypesEnum.PD]: {
 		description: "Pitches pattern with duodecimal values",
-		lineRegex: /^(PD)(\d+)=(.*)/,
+		lineRegExp: /^(PD)(\d+)=(.*)/,
+		type: LineTypesEnum.PD,
 	},
-	PL: {
+	[LineTypesEnum.PL]: {
 		description: "Pitches pattern with letters",
-		lineRegex: /^(PL)(\d+)=(.*)/,
+		lineRegExp: /^(PL)(\d+)=(.*)/,
+		type: LineTypesEnum.PL,
 	},
-	PM: {
+	[LineTypesEnum.PM]: {
 		description: "Pitches pattern with MIDI note numbers",
-		lineRegex: /^(PM)(\d+)=(.*)/,
+		lineRegExp: /^(PM)(\d+)=(.*)/,
+		type: LineTypesEnum.PM,
 	},
-	R: {
+	[LineTypesEnum.R]: {
 		description: "Rhythm pattern with note values",
-		lineRegex: /^(R)(\d+)=(.*)/,
+		lineRegExp: /^(R)(\d+)=(.*)/,
+		type: LineTypesEnum.R,
 	},
-	RS: {
+	[LineTypesEnum.RS]: {
 		description: "Rhythm pattern with ms values",
-		lineRegex: /^(RS)(\d+)=(.*)/,
+		lineRegExp: /^(RS)(\d+)=(.*)/,
+		type: LineTypesEnum.RS,
 	},
-	V: {
+	[LineTypesEnum.V]: {
 		description: "Velocity pattern",
-		lineRegex: /^(V)(\d+)=(.*)/,
+		lineRegExp: /^(V)(\d+)=(.*)/,
+		type: LineTypesEnum.V,
 	},
 };
 
