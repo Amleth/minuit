@@ -95,7 +95,6 @@ export default class DuodecimalPitchValuesSequenceLexer {
 				);
 				this.contexts.pop();
 				this.pos++;
-				console.log(this.input.slice(this.pos), this.contexts);
 				continue mainLoop;
 			}
 
@@ -104,15 +103,16 @@ export default class DuodecimalPitchValuesSequenceLexer {
 				this.contexts.at(-1) !== Context.IN_GROUP &&
 				this.contexts.at(-1) !== Context.IN_FUNCTION
 			) {
-				console.log(this.input.slice(this.pos), this.contexts);
-				this.e();
+				throw new Error(
+					`Unbalanced contexts open & close symbols in ${this.input}`,
+				);
 			}
 
 			this.pos++;
 		}
 
 		if (this.contexts.length > 0) {
-			this.e();
+			throw new Error(`Context not closed properly in ${this.input}`);
 		}
 
 		return this.tokens;
@@ -141,11 +141,5 @@ export default class DuodecimalPitchValuesSequenceLexer {
 		} else {
 			return [];
 		}
-	}
-
-	private e() {
-		throw new Error(
-			`Unbalanced contexts open & close symbols in ${this.input}`,
-		);
 	}
 }
