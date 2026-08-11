@@ -1,19 +1,26 @@
-import { Line } from "./structs.ts";
-
 export const SYMBOL_COMMENT = "#";
 export const SYMBOL_CHORD_OPEN = "<";
 export const SYMBOL_CHORD_CLOSE = ">";
+export const SYMBOL_FUNCTION_OPEN = "(";
+export const SYMBOL_FUNCTION_CLOSE = ")";
 export const SYMBOL_GROUP_OPEN = "(";
 export const SYMBOL_GROUP_CLOSE = ")";
 export const SYMBOL_OCTAVE_UP = "'";
 export const SYMBOL_OCTAVE_DOWN = ",";
 export const SYMBOL_PATTERN_VARIABLE_OPEN = "{";
 export const SYMBOL_PATTERN_VARIABLE_CLOSE = "}";
+export const SYMBOL_FUNCTION_NAME = ":";
+export const SYMBOL_FUNCTION_GENERATOR = "~";
+export const SYMBOL_FUNCTION_PARAMETER_SEPARATOR = ";";
 
 export enum TokenType {
 	COMMENT = "COMMENT",
+	FUNCTION_NAME = "FUNCTION_NAME",
 	SYMBOL_CHORD_CLOSE = "SYMBOL_CHORD_CLOSE",
 	SYMBOL_CHORD_OPEN = "SYMBOL_CHORD_OPEN",
+	SYMBOL_FUNCTION_CLOSE = "SYMBOL_FUNCTION_CLOSE",
+	SYMBOL_FUNCTION_OPEN = "SYMBOL_FUNCTION_OPEN",
+	SYMBOL_FUNCTION_GENERATOR = "SYMBOL_FUNCTION_GENERATOR",
 	SYMBOL_GROUP_CLOSE = "SYMBOL_GROUP_CLOSE",
 	SYMBOL_GROUP_OPEN = "SYMBOL_GROUP_OPEN",
 	PATTERN_REFERENCE = "PATTERN_REFERENCE",
@@ -101,4 +108,9 @@ export class Token {
 		this.type = type;
 		this.value = value;
 	}
+}
+
+export enum Context {
+	IN_GROUP = "IN_GROUP",
+	IN_FUNCTION = "IN_FUNCTION",
 }
