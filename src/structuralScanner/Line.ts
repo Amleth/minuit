@@ -2,15 +2,14 @@ import type { LineTypesEnum } from "../consts.ts";
 import type { Token } from "./Token.ts";
 
 export default class Line {
-	public number: number;
-	public content: string;
+	public input: string;
+	public tokens: Token[] = [];
 	public type: LineTypesEnum;
-	public tokens: Token[];
+	public value: string;
 
-	constructor(number: number, content: string, type: LineTypesEnum) {
-		this.number = number;
-		this.content = content;
+	constructor(input: string, type: LineTypesEnum, value: string) {
+		this.input = input;
 		this.type = type;
-		this.tokens = [];
+		this.value = value.trim();
 	}
 }

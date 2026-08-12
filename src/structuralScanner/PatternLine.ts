@@ -3,17 +3,14 @@ import Line from "./Line.ts";
 
 export class PatternLine extends Line {
 	public patternNumber: number;
-	public patternValues: string;
 
 	constructor(
-		number: number,
-		content: string,
+		input: string,
 		type: LineTypesEnum,
+		value: string,
 		patternNumber: number,
-		patternValues: string,
 	) {
-		super(number, content, type);
+		super(input, type, value);
 		this.patternNumber = patternNumber;
-		this.patternValues = patternValues.trim();
 	}
 }
