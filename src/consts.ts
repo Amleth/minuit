@@ -1,3 +1,5 @@
+import { PatternLine } from "./structuralScanner/PatternLine.ts";
+
 export const SYMBOL_CHORD_CLOSE = ">";
 export const SYMBOL_CHORD_OPEN = "<";
 export const SYMBOL_COMMENT = "#";
@@ -15,7 +17,7 @@ export const SYMBOL_PATTERN_VARIABLE_OPEN = "{";
 export const SYMBOL_SUB_CLOSE = "]";
 export const SYMBOL_SUB_OPEN = "[";
 
-export enum TokenType {
+export enum TokenTypePatternDeclaration {
 	COMMENT = "COMMENT",
 	FUNCTION_NAME = "FUNCTION_NAME",
 	SYMBOL_CHORD_CLOSE = "SYMBOL_CHORD_CLOSE",
@@ -36,83 +38,84 @@ export enum ContextsEnum {
 }
 
 export enum LineTypesEnum {
-	CC = "CC",
-	G = "G",
-	PA = "PA",
-	PD = "PD",
-	PL = "PL",
-	PM = "PM",
-	R = "R",
-	RS = "RS",
-	V = "V",
+	PatternDeclarationCC = "CC",
+	PatternDeclarationG = "G",
+	PatternDeclarationPA = "PA",
+	PatternDeclarationPD = "PD",
+	PatternDeclarationPL = "PL",
+	PatternDeclarationPM = "PM",
+	PatternDeclarationR = "R",
+	PatternDeclarationRS = "RS",
+	PatternDeclarationV = "V",
+}
+
+export enum LineTypeCategoryEnum {
+	PatternDeclaration = "PatternDeclaration",
+	StupidStuff = "StupidStuff",
 }
 
 type LineType = {
 	description: string;
 	lineRegExp: RegExp;
 	type: LineTypesEnum;
+	category: LineTypeCategoryEnum;
 };
 
-export const LINE_TYPES: Record<LineTypesEnum, LineType> = {
-	[LineTypesEnum.CC]: {
+export const LINE_TYPES: LineType[] = [
+	{
 		description: "Continuous Controller values",
 		lineRegExp: /^(CC\d+)_(\d+)=(.*)/,
-		type: LineTypesEnum.CC,
+		type: LineTypesEnum.PatternDeclarationCC,
+		category: LineTypeCategoryEnum.PatternDeclaration,
 	},
-	[LineTypesEnum.G]: {
+	{
 		description: "Drum grid",
 		lineRegExp: /^(G\d+)_(\d+)=(.*)/,
-		type: LineTypesEnum.G,
+		type: LineTypesEnum.PatternDeclarationG,
+		category: LineTypeCategoryEnum.PatternDeclaration,
 	},
-	[LineTypesEnum.PA]: {
+	{
 		description: "Pitches pattern with letters and accidentals",
 		lineRegExp: /^(PA)(\d+)=(.*)/,
-		type: LineTypesEnum.PA,
+		type: LineTypesEnum.PatternDeclarationPA,
+		category: LineTypeCategoryEnum.PatternDeclaration,
 	},
-	[LineTypesEnum.PD]: {
+	{
 		description: "Pitches pattern with duodecimal values",
 		lineRegExp: /^(PD)(\d+)=(.*)/,
-		type: LineTypesEnum.PD,
+		type: LineTypesEnum.PatternDeclarationPD,
+		category: LineTypeCategoryEnum.PatternDeclaration,
 	},
-	[LineTypesEnum.PL]: {
+	{
 		description: "Pitches pattern with letters",
 		lineRegExp: /^(PL)(\d+)=(.*)/,
-		type: LineTypesEnum.PL,
+		type: LineTypesEnum.PatternDeclarationPL,
+		category: LineTypeCategoryEnum.PatternDeclaration,
 	},
-	[LineTypesEnum.PM]: {
+	{
 		description: "Pitches pattern with MIDI note numbers",
 		lineRegExp: /^(PM)(\d+)=(.*)/,
-		type: LineTypesEnum.PM,
+		type: LineTypesEnum.PatternDeclarationPM,
+		category: LineTypeCategoryEnum.PatternDeclaration,
 	},
-	[LineTypesEnum.R]: {
+	{
 		description: "Rhythm pattern with note values",
 		lineRegExp: /^(R)(\d+)=(.*)/,
-		type: LineTypesEnum.R,
+		type: LineTypesEnum.PatternDeclarationR,
+		category: LineTypeCategoryEnum.PatternDeclaration,
 	},
-	[LineTypesEnum.RS]: {
+	{
 		description: "Rhythm pattern with ms values",
 		lineRegExp: /^(RS)(\d+)=(.*)/,
-		type: LineTypesEnum.RS,
+		type: LineTypesEnum.PatternDeclarationRS,
+		category: LineTypeCategoryEnum.PatternDeclaration,
 	},
-	[LineTypesEnum.V]: {
+	{
 		description: "Velocity pattern",
 		lineRegExp: /^(V)(\d+)=(.*)/,
-		type: LineTypesEnum.V,
+		type: LineTypesEnum.PatternDeclarationV,
+		category: LineTypeCategoryEnum.PatternDeclaration,
 	},
-};
+];
 
 export const PITCH_DUODECIMAL_VALUES = [..."0123456789xXyY"];
-
-export class Token {
-	public type: TokenType;
-	public value: string;
-	constructor(type: TokenType, value: string) {
-		this.type = type;
-		this.value = value;
-	}
-}
-
-export enum Context {
-	IN_GROUP = "IN_GROUP",
-	IN_FUNCTION = "IN_FUNCTION",
-}

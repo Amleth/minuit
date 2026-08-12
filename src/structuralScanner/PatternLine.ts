@@ -1,10 +1,7 @@
-import type { LineTypesEnum, Token } from "./consts.ts";
+import type { LineTypesEnum } from "../consts.ts";
+import Line from "./Line.ts";
 
-export class Line {
-	public number: number;
-	public content: string;
-	public type: LineTypesEnum;
-	public tokens: Token[];
+export class PatternLine extends Line {
 	public patternNumber: number;
 	public patternValues: string;
 
@@ -15,10 +12,7 @@ export class Line {
 		patternNumber: number,
 		patternValues: string,
 	) {
-		this.number = number;
-		this.content = content;
-		this.type = type;
-		this.tokens = [];
+		super(number, content, type);
 		this.patternNumber = patternNumber;
 		this.patternValues = patternValues.trim();
 	}

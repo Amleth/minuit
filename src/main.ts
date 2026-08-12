@@ -1,8 +1,6 @@
 import check from "./checking/check.ts";
-import analyse from "./lexing/lineAnalysis.ts";
-import { chooseTokenizer } from "./lexing/tokenization.ts";
-import parseLine from "./parsing/parsing.ts";
 import clean from "./preprocesing/cleaning.ts";
+import analyseLines from "./preprocesing/lineAnalysis.ts";
 import substituteSymbols from "./preprocesing/symbolsSubstitution.ts";
 import type { Line } from "./structs.ts";
 
@@ -13,10 +11,11 @@ sep();
 let input = Deno.readTextFileSync(Deno.args[0]);
 input = substituteSymbols(input);
 input = clean(input);
-const lines: Line[] = analyse(input);
+const lines: Line[] = analyseLines(input);
 for (const line of lines) {
 	check(line.patternValues);
-	chooseTokenizer(line);
 	console.log(line);
-	parseLine(line);
+	// chooseTokenizer(line);
+	// console.log(line);
+	// parseLine(line);
 }
