@@ -1,3 +1,3 @@
-import PatternValue from "./PatternValue.ts";
+import PatternValue from "./PatternStringValues.ts";
 
-export default class extends PatternValue {}
+export default class PatternVariable extends PatternValue {}
