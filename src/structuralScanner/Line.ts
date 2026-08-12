@@ -1,9 +1,7 @@
 import type { LineTypesEnum } from "../consts.ts";
-import type { Token } from "./Token.ts";
 
 export default class Line {
 	public input: string;
-	public tokens: Token[] = [];
 	public type: LineTypesEnum;
 	public value: string;
 
