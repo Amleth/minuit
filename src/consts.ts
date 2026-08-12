@@ -1,5 +1,3 @@
-import { PatternLine } from "./structuralScanner/PatternLine.ts";
-
 export const SYMBOL_CHORD_CLOSE = ">";
 export const SYMBOL_CHORD_OPEN = "<";
 export const SYMBOL_COMMENT = "#";
