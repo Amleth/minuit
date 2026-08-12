@@ -29,13 +29,13 @@ export default class DuodecimalPitchValuesSequenceLexer {
 			if (PITCH_DUODECIMAL_VALUES.includes(char)) {
 				this.tokens.push(new Token(TokenType.PITCH_DUODECIMAL_VALUE, char));
 				this.pos++;
-				continue mainLoop;
+				continue;
 			}
 
 			if ([SYMBOL_OCTAVE_DOWN, SYMBOL_OCTAVE_UP].includes(char)) {
 				this.tokens[this.tokens.length - 1].value += char;
 				this.pos++;
-				continue mainLoop;
+				continue;
 			}
 
 			for (const symbol of [
@@ -63,7 +63,7 @@ export default class DuodecimalPitchValuesSequenceLexer {
 				if (functionNameToken.length > 0) {
 					this.contexts.push(Context.IN_FUNCTION);
 					this.tokens.push(...functionNameToken);
-					continue mainLoop;
+					continue;
 				}
 			}
 
@@ -71,7 +71,7 @@ export default class DuodecimalPitchValuesSequenceLexer {
 				this.tokens.push(new Token(TokenType.SYMBOL_GROUP_OPEN, char));
 				this.contexts.push(Context.IN_GROUP);
 				this.pos++;
-				continue mainLoop;
+				continue;
 			}
 
 			if (
@@ -83,7 +83,7 @@ export default class DuodecimalPitchValuesSequenceLexer {
 				);
 				this.contexts.pop();
 				this.pos++;
-				continue mainLoop;
+				continue;
 			}
 
 			if (
@@ -95,24 +95,10 @@ export default class DuodecimalPitchValuesSequenceLexer {
 				);
 				this.contexts.pop();
 				this.pos++;
-				continue mainLoop;
-			}
-
-			if (
-				(char === SYMBOL_GROUP_CLOSE || char === SYMBOL_FUNCTION_CLOSE) &&
-				this.contexts.at(-1) !== Context.IN_GROUP &&
-				this.contexts.at(-1) !== Context.IN_FUNCTION
-			) {
-				throw new Error(
-					`Unbalanced contexts open & close symbols in ${this.input}`,
-				);
+				continue;
 			}
 
 			this.pos++;
-		}
-
-		if (this.contexts.length > 0) {
-			throw new Error(`Context not closed properly in ${this.input}`);
 		}
 
 		return this.tokens;

@@ -1,4 +1,4 @@
-import { LINE_TYPES, LineTypesEnum } from "../consts.ts";
+import { LINE_TYPES, type LineTypesEnum } from "../consts.ts";
 import { Line } from "../structs.ts";
 
 export default function (input: string): Line[] {

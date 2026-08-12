@@ -1,17 +1,19 @@
-export const SYMBOL_COMMENT = "#";
-export const SYMBOL_CHORD_OPEN = "<";
 export const SYMBOL_CHORD_CLOSE = ">";
-export const SYMBOL_FUNCTION_OPEN = "(";
+export const SYMBOL_CHORD_OPEN = "<";
+export const SYMBOL_COMMENT = "#";
 export const SYMBOL_FUNCTION_CLOSE = ")";
-export const SYMBOL_GROUP_OPEN = "(";
-export const SYMBOL_GROUP_CLOSE = ")";
-export const SYMBOL_OCTAVE_UP = "'";
-export const SYMBOL_OCTAVE_DOWN = ",";
-export const SYMBOL_PATTERN_VARIABLE_OPEN = "{";
-export const SYMBOL_PATTERN_VARIABLE_CLOSE = "}";
 export const SYMBOL_FUNCTION_NAME = ":";
-export const SYMBOL_FUNCTION_TRANSFORMATOR = "~";
+export const SYMBOL_FUNCTION_OPEN = "(";
 export const SYMBOL_FUNCTION_PARAMETER_SEPARATOR = ";";
+export const SYMBOL_FUNCTION_TRANSFORMATOR = "~";
+export const SYMBOL_GROUP_CLOSE = ")";
+export const SYMBOL_GROUP_OPEN = "(";
+export const SYMBOL_OCTAVE_DOWN = ",";
+export const SYMBOL_OCTAVE_UP = "'";
+export const SYMBOL_PATTERN_VARIABLE_CLOSE = "}";
+export const SYMBOL_PATTERN_VARIABLE_OPEN = "{";
+export const SYMBOL_SUB_CLOSE = "]";
+export const SYMBOL_SUB_OPEN = "[";
 
 export enum TokenType {
 	COMMENT = "COMMENT",
