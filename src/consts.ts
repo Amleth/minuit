@@ -15,6 +15,8 @@ export const SYMBOL_PATTERN_VARIABLE_OPEN = "{";
 export const SYMBOL_SUB_CLOSE = "]";
 export const SYMBOL_SUB_OPEN = "[";
 
+export const functionNameRegExp = "[a-zA-Z0-9_]+";
+
 export enum TokenTypePatternDeclaration {
 	COMMENT = "COMMENT",
 	FUNCTION_NAME = "FUNCTION_NAME",

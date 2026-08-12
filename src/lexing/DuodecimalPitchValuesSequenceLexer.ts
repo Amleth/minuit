@@ -58,15 +58,6 @@ export default class DuodecimalPitchValuesSequenceLexer {
 				continue mainLoop;
 			}
 
-			if (char === SYMBOL_FUNCTION_OPEN) {
-				const functionNameToken = this.readFunctionName();
-				if (functionNameToken.length > 0) {
-					this.contexts.push(Context.IN_FUNCTION);
-					this.tokens.push(...functionNameToken);
-					continue;
-				}
-			}
-
 			if (char === SYMBOL_GROUP_OPEN) {
 				this.tokens.push(new Token(TokenType.SYMBOL_GROUP_OPEN, char));
 				this.contexts.push(Context.IN_GROUP);
@@ -113,19 +104,6 @@ export default class DuodecimalPitchValuesSequenceLexer {
 			throw new Error(
 				`Pattern reference error in: ${this.input.slice(this.pos)}`,
 			);
-		}
-	}
-
-	private readFunctionName(): Token[] {
-		const match = this.input.slice(this.pos).match(/^\((\w+):/);
-		if (match) {
-			this.pos = this.pos + "(:".length + match[1].length;
-			return [
-				new Token(TokenType.SYMBOL_FUNCTION_OPEN, SYMBOL_FUNCTION_OPEN),
-				new Token(TokenType.FUNCTION_NAME, match[1]),
-			];
-		} else {
-			return [];
 		}
 	}
 }

@@ -1,17 +1,12 @@
 import {
+	functionNameRegExp,
+	SYMBOL_FUNCTION_NAME,
 	SYMBOL_FUNCTION_OPEN,
 	SYMBOL_FUNCTION_TRANSFORMATOR,
 } from "../consts.ts";
 import type PatternItem from "./patternItems/PatternItem.ts";
 import PatternStringValues from "./patternItems/PatternStringValues.ts";
-
-enum Contexts {
-	IN_FUNCTION_GENERATOR,
-	IN_FUNCTION_TRANSFORMATOR,
-	IN_GROUP,
-	IN_CHORD,
-	IN_SUB,
-}
+import Transformator from "./patternItems/Transformator.ts";
 
 export default function scanPatternValues(input: string): PatternItem[] {
 	const patternItems: PatternItem[] = [];
@@ -31,13 +26,28 @@ export default function scanPatternValues(input: string): PatternItem[] {
 			flushPatternStringValues();
 			pos++;
 			char = input[pos];
+
+			// Check that the transformator symbol is followed by the open function symbol
 			if (char !== SYMBOL_FUNCTION_OPEN) {
 				throw new Error(
 					`a "${SYMBOL_FUNCTION_TRANSFORMATOR}" must be followed by a "${SYMBOL_FUNCTION_OPEN}"`,
 				);
 			}
-			pos++;
-			continue;
+
+			// Attempt to read the function name
+			const match = input
+				.slice(pos)
+				.match(new RegExp(`^\\((${functionNameRegExp}):`));
+			if (match) {
+				const functionName = match[1];
+				pos = pos + 2 + functionName.length;
+				patternItems.push(new Transformator(functionName));
+				continue;
+			} else {
+				throw new Error(
+					`A "${SYMBOL_FUNCTION_TRANSFORMATOR}${SYMBOL_FUNCTION_OPEN}" must be followed by a valid function name and then by a "${SYMBOL_FUNCTION_NAME}"`,
+				);
+			}
 		}
 
 		currentContiguousPatternValues += char;
