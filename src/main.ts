@@ -20,8 +20,7 @@ structure.lines = analyseLines(input);
 for (const line of structure.lines) {
 	check(line.value);
 	const patternItems: PatternItem[] = scanPatternValues(line.value);
-	(line as PatternLine).items = patternItems;
-	console.log(structure);
+	console.log(patternItems);
 	// chooseTokenizer(line);
 	// console.log(line);
 	// parseLine(line);
