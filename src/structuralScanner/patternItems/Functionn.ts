@@ -7,7 +7,7 @@ export default class Functionn
 	implements ContextPatternItem
 {
 	public name: string;
-	public parameters: string[] = [];
+	public parameters: PatternItem[] = [];
 
 	constructor(name: string) {
 		super();
