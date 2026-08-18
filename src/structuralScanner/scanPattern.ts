@@ -68,7 +68,7 @@ export default function scanPattern(input: string, depth = 0): PatternItem[] {
 		}
 
 		if (generatorBeginRegExp.test(input.slice(pos))) {
-			const match = input.slice(pos).match(transformatorBeginRegExp);
+			const match = input.slice(pos).match(generatorBeginRegExp);
 			if (match) {
 				const functionName = match[1];
 				const i = new Generator(functionName);
